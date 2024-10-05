@@ -1,0 +1,9 @@
+body {
+    background-color: lightblue;
+}
+h1 {
+    color: darkmagenta;
+    margin-left: 50px;
+    background-color: rgb(129, 204, 230);
+    opacity: 80%;
+}

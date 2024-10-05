@@ -1,0 +1,17 @@
+Algoritmo BuclesTeoria
+	
+//Mientras que no se cumpla esa condición no se sale del bucle [While...]//
+	Mientras (condición de control) Hacer
+		instrucciones
+	Fin Mientras
+	
+//Tu haz cosas y luego comprueba la condicion a ver si repetimos el bucle Do...while //
+	Repetir
+		secuencia_de_acciones
+	Hasta Que expresion_logica
+	
+//Cuando sabes cuantas veces tienes que recorrer el bucle  For(contador=0;contador<5;contador ++)[....]// 
+	Para variable_numerica<-valor_inicial Hasta valor_final Con Paso paso Hacer
+		secuencia_de_acciones
+	Fin Para
+FinAlgoritmo
