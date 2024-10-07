@@ -16,7 +16,7 @@ Algoritmo Divisores
 			resultado = resultado + "y " + ConvertirATexto(divisor) + ".";
 		FinSi
 		
-		Si 	(num%divisor==0 Y divisor <> num)
+		Si 	(num%divisor==0 Y divisor <> num) //el divisor <> a nom para que no me salga la ,
 			resultado = resultado + ConvertirATexto(divisor) + ", ";
 		FinSi
 	Fin Para

@@ -7,12 +7,12 @@ Algoritmo NumerosPrimos
 	esPrimo <- Verdadero
 	
 	Repetir
-		Escribir "Inserte un numero";
+		Escribir "Inserte un numero entero mayor que 0";
 		Leer num; 
 	Hasta Que num>0
 	
 	Para divisor<-2 Hasta num-1 Con Paso 1 Hacer
-		Si num%divisor=0 
+		Si num%divisor==0 Entonces
 				esPrimo <- Falso
 				divisor<-num-1
 		SiNo
