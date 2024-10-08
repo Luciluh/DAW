@@ -1,24 +1,26 @@
-//Escribe un algoritmo que dado un numero, muestre por pantalla todos su divisores
-//Ej: 8= 1 2 4 8
-
-Algoritmo Divisores
+Algoritmo DivisoresExamen
 	
 	Definir num Como Entero;
-	Definir divisor Como Entero
+	Definir divisor Como Entero;
 	Definir resultado Como Caracter;
-	Escribir "Introduxca un numero";
-	Leer num;
-	resultado<-"" ;
 	
-	Para divisor<-1 Hasta num Con Paso 1 Hacer
+	Repetir
+		Escribir "Inserte un numero entero entero mayor que 0";
+		Leer num; 
+	Hasta Que num>0
+	
+	Para divisor<-1 Hasta num Hacer
 		
-		Si 	(divisor == num)
-			resultado = resultado + "y " + ConvertirATexto(divisor) + ".";
+		Si 	(divisor == num) Entonces
+			resultado <- resultado + "y " + ConvertirATexto(divisor) + "."; 
 		FinSi
 		
-		Si 	(num%divisor==0 Y divisor <> num) //el divisor <> a nom para que no me salga la ,
-			resultado = resultado + ConvertirATexto(divisor) + ", ";
+		Si 	(num%divisor==0 Y divisor <> num)  Entonces
+			resultado <- resultado + ConvertirATexto(divisor) + ", ";
 		FinSi
+		
 	Fin Para
-		Escribir "Los divisores son: ",resultado;
+	
+	Escribir "Los divisores son: ",resultado;
+	
 FinAlgoritmo

@@ -1,29 +1,27 @@
-//Escribe un algoritmo que solicite por teclado un valor numerico entero mayor que 0 e indique por pantallas si es primo o no
-//Solo es primo si es divisible por si mismo y por la unidad(1)
-Algoritmo NumerosPrimos
+Algoritmo NumerosPrimosExamen
 	Definir num Como Entero;
 	Definir divisor Como Entero;
-	Definir esPrimo Como Logico
-	esPrimo <- Verdadero
+	Definir esPrimo Como Logico;
+	esPrimo <- Verdadero;
 	
 	Repetir
-		Escribir "Inserte un numero entero mayor que 0";
+		Escribir "Inserte un numero entero entero mayor que 0";
 		Leer num; 
 	Hasta Que num>0
 	
 	Para divisor<-2 Hasta num-1 Con Paso 1 Hacer
 		Si num%divisor==0 Entonces
-				esPrimo <- Falso
-				divisor<-num-1
+				esPrimo <- Falso;
+				divisor<-num-1;
 		SiNo
-				esPrimo <- Verdadero
+				esPrimo <- Verdadero;
 		FinSi
 	Fin Para
 		
-	Si esPrimo 
-		Escribir num, " es un numero primo"
+	Si esPrimo Entonces
+		Escribir num, " es un numero primo";
 	SiNo 
-		Escribir num, " no es un numero primo"
+		Escribir num, " no es un numero primo";
 	FinSi
 	
 FinAlgoritmo
