@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 09-10-2024 a las 12:34:40
+-- Tiempo de generación: 09-10-2024 a las 23:54:22
 -- Versión del servidor: 10.4.32-MariaDB
--- Versión de PHP: 8.2.12
+-- Versión de PHP: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -34,6 +34,17 @@ CREATE TABLE `especie` (
   `PesEsp` decimal(6,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Volcado de datos para la tabla `especie`
+--
+
+INSERT INTO `especie` (`CodEsp`, `NomEsp`, `AltEsp`, `PesEsp`) VALUES
+(1, 'Pikachu', 34.10, 101.12),
+(2, 'Eevee', 66.50, 123.12),
+(3, 'Lapras', 77.43, 234.32),
+(4, 'Ratata', 54.10, 412.12),
+(5, 'Diglet', 87.10, 601.12);
+
 -- --------------------------------------------------------
 
 --
@@ -46,6 +57,27 @@ CREATE TABLE `esp_mov` (
   `CodMov` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Volcado de datos para la tabla `esp_mov`
+--
+
+INSERT INTO `esp_mov` (`CodEspMov`, `CodEsp`, `CodMov`) VALUES
+(1, 1, 1),
+(2, 1, 2),
+(3, 1, 7),
+(4, 2, 2),
+(5, 2, 3),
+(6, 2, 6),
+(7, 3, 5),
+(8, 3, 2),
+(9, 4, 2),
+(10, 4, 3),
+(11, 4, 6),
+(12, 4, 7),
+(13, 5, 4),
+(14, 5, 7),
+(15, 5, 2);
+
 -- --------------------------------------------------------
 
 --
@@ -56,6 +88,20 @@ CREATE TABLE `movimiento` (
   `CodMov` int(11) NOT NULL,
   `DesMov` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `movimiento`
+--
+
+INSERT INTO `movimiento` (`CodMov`, `DesMov`) VALUES
+(1, 'Impactrueno'),
+(2, 'Placaje'),
+(3, 'Mordisco'),
+(4, 'Excavar'),
+(5, 'Surf'),
+(6, 'Látigo'),
+(7, 'Ataque rápido'),
+(8, 'Bola sombra');
 
 --
 -- Índices para tablas volcadas
