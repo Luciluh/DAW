@@ -5,17 +5,17 @@
         }
 
         /* Todos los parrafos de la página */
-            {
+        p  {
             color: #555;
         }
 
         /* Todos los párrafos contenidos en #primero */
-            {
+        p.primero    {
             color: #336699;
         }
 
         /* Todos los enlaces la página */
-            {
+        a   {
             color: #CC3300;
         }
 
