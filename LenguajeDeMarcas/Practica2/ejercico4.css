@@ -1,0 +1,30 @@
+body {
+    background-color: white;
+}
+div {
+    background-color: rgb(160, 163, 163);
+}
+h1{
+    color: red;
+}
+.trabajador1 {
+
+    color: rgb(12, 1, 177);
+    text-align: center;
+    align-content: center;
+}
+
+.trabajador2 {
+
+    color: rgb(14, 138, 3);
+    text-align: center;
+    align-content: center;
+}
+
+.bordes {
+    border-style: solid;  
+}
+
+.bordes2 {
+    border-style: double;
+}
