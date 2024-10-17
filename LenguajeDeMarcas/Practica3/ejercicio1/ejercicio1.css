@@ -1,4 +1,33 @@
+h1{
+    color: #333;
+    font-size: 20px;
+}
+
+h2{
+    color: #666;
+    font-size: 16px;
+}
+
 table, th, td {
     border: 1px solid black;
     border-collapse: collapse;
+}
+
+thead { 
+    background-color: #666;
+    font-size: 16px; 
+}
+
+tbody{
+    background-color: #fff; 
+    font-size: 16px; 
+}
+
+tfoot{
+    background-color: #ccc;
+    font-size: 16px; 
+}
+
+a{
+    color: blue
 }
