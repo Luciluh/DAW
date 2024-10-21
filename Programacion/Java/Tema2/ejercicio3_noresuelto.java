@@ -10,6 +10,8 @@ public class ejercicio3_noresuelto {
     String direccion = "Calle Limonar";
     int num = 646273849;
 
-    System.out.println(nombre + direccion + num);
+    System.out.println(nombre);
+    System.out.println(direccion);
+    System.out.println(num);
     } 
 }
