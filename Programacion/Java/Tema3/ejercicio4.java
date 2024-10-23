@@ -11,8 +11,8 @@ public class ejercicio4 {
         num1 = sc.nextDouble();
         System.out.println("Introduzca el segundo numero: ");
         num2 = sc.nextDouble();
-        System.out.printf("x = %.1f", num1);
-        System.out.printf("y = %.1f", num2);
+        System.out.printf("x = %.1f\n", num1);
+        System.out.printf("y = %.1f\n", num2);
         System.out.println("x + y = " + (num1+num2));
         System.out.println("x - y = " + (num1-num2));
         System.out.println("x / y = " + (num1/num2));
