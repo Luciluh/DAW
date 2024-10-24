@@ -19,7 +19,8 @@ public class ejercicio1 {
     System.out.println("Introduzca el segundo numero: ");
     num2 = scanner.nextInt();
     resultado=num1*num2;
-    System.out.println(num1 + " * " + num2 + " = " + resultado);
+    /*OPCION2:   System.out.println(num1 + " * " + num2 + " = " + resultado);*/
+    System.out.printf("%d * %d = %d\n", num1,num2,resultado);
     scanner.close();
 
     }
