@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="ejercicio1.css">
     <title>Ejercicio 1</title>
 </head>
-<body>
-<div>
-    <img src="recursos/IAT-LOGOTIPO.jpg" alt="IAT-LOGOTIPO">
-</div>
 
-<div>
-    <form>
+<body>
+    <div class="logo-alan">
+        <img id="img-alan" src="recursos/IAT-LOGOTIPO.jpg" alt="IAT-LOGOTIPO">
+    </div>
+
+
+    <form action="/procesarincidencia.php" target="_blank" method="post">
         <fieldset>
             <legend>Nueva incidencia</legend>
             <label for="prof">Profesor:<span class="required">*</span></label>
@@ -20,11 +22,11 @@
             <label for="email">Correo electronico:<span class="required">*</span></label>
             <input type="email" id="email" name="email" placeholder="Escribe tu correo aquí."><br><br>
             <label for="dep">Departamento:<span class="required">*</span></label>
-                <select id="dep" name="dep">
-                    <option value="opcion1">Informatica</option>
-                    <option value="opcion2">Matemáticas</option>
-                    <option value="opcion3">Quimica</option>
-                </select><br><br>
+            <select id="dep" name="dep">
+                <option value="opcion1">Informatica</option>
+                <option value="opcion2">Matemáticas</option>
+                <option value="opcion3">Quimica</option>
+            </select><br><br>
             <label for="aula">Aula:<span class="required">*</span></label>
             <input type="text" id="aula" name="aula" placeholder="Indica el aula de incidencia"><br><br>
             <label for="dia">Dia de la incidencia:<span class="required">*</span></label>
@@ -32,21 +34,24 @@
             <label for="hora">Dia de la incidencia:<span class="required">*</span></label>
             <input type="time" id="hora" name="hora" placeholder="dd/mm/aaaa"><br><br>
             <label for="descrip">Descripcion de la incidencia:<span class="required">*</span></label>
-            <input type="textarea" id="descrip" name="descrip"><br><br>
-            <label for="imagen">Imagen de la incidencia (opcional):</label><br>
+            <!--<input type="textarea" id="descrip" name="descrip"><br><br>-->
+            <textarea id="descrip" name="descrip" rows="2" cols="20"></textarea><br><br>
+            <label for="imagen">Imagen de la incidencia (opcional):</label><br><br>
             <input type="file" id="imagen" name="imagen"><br><br>
             <button type="submit">Enviar incidencia</button> <button type="submit">Borrar formulario</button>
         </fieldset>
     </form>
 </body>
 <footer>
-    <h1>Síguenos</h1>
+    <h3>Síguenos</h3>
     <table>
-            <th><img src="recursos/icons8-twitter-48.png" alt="icon_twitter"></th>
-            <th><img src="recursos/icons8-facebook-48.png" alt="icon_facebook"></th>
-            <th><img src="recursos/icons8-instagram-48.png" alt="icon_instagram"></th>
-            <th><img src="recursos/icons8-youtube-48.png" alt="icons8-youtube-48"></th>
-            <th><img src="recursos/icons8-website-48.png" alt="icons8-website-48"></th>
+        <th><a href="https://twitter.com/fpmalagatech"><img src="recursos/icons8-twitter-48.png" alt="icon_twitter"></a></th>
+        <th><a href="https://facebook.com/fpmalagatech"><img src="recursos/icons8-facebook-48.png" alt="icon_facebook"></a></th>
+        <th><a href="https://instagram.com/fpmalagatech"><img src="recursos/icons8-instagram-48.png" alt="icon_instagram"></a></th>
+        <th><a href="https://youtube.com/fpmalagatech"><img src="recursos/icons8-youtube-48.png" alt="icons8-youtube-48"></a></th>
+        <th><a href="https://fpalanturing.es/"><img src="recursos/icons8-website-48.png" alt="icons8-website-48"></a></th>
     </table>
 </footer>
+
 </html>
+
