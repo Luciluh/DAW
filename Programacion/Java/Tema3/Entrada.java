@@ -4,11 +4,18 @@ import java.util.Scanner;
 public class Entrada {
 
     public static void main(String[] args) {
+<<<<<<< HEAD
 
         String nombre;
         int edad;
         String linea;
         float valor;
+=======
+        String nombre ;
+        int edad ;
+        String linea ;
+        float valor ;
+>>>>>>> 556c27c0810e8637ea48a99482378ed5c0511d5e
 
         /* 
         //Solicitamos una cadena de caracteres:
