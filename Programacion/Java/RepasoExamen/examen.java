@@ -10,12 +10,12 @@ public class examen {
 
     ->  Para los printf:
 
-        Con la sentendia "\n" cerramos y hacemos un salto de línea 
+        Con la sentencia "\n" cerramos y hacemos un salto de línea 
 
         Usos del %: 
         System.out.printf("Numero entero: %d\n", numeroEntero); //%d para los printf para los enteros
         System.out.printf("Numero entero: %f\n", numeroReal); // %f para los printf para los reales // 
-                                                                    //para mostrar precision de x decimales pondremos .x -> eje: %f.2 -> daria los decimales
+                                                                    //para mostrar precision de x decimales pondremos .x -> eje: %.2f -> daria los decimales
         System.out.printf("Numero entero: %c\n", caracter); // %c para los printf para caracter 
         System.out.printf("Numero entero: %s\n", cadena); // %s para los printf para cadenas 
 

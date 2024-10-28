@@ -16,7 +16,7 @@ public class ejercicio5 {
         altura = sc.nextDouble();
         area = (base*altura);
         System.out.printf("El area del rectangulo es: %.2f cm\u00b2\n", area);
-
+        
         sc.close();
 
     }
