@@ -1,12 +1,14 @@
+
 import java.util.Scanner;
 
 public class Entrada {
+
     public static void main(String[] args) {
-         
-        String nombre ;
-        int edad ;
-        String linea ;
-        float valor ;
+
+        String nombre;
+        int edad;
+        String linea;
+        float valor;
 
         /* 
         //Solicitamos una cadena de caracteres:
@@ -32,15 +34,13 @@ public class Entrada {
         System.out.println("Hola " + nombre + ". Encantada de conocerte.") ;
         System.out.printf("Veo que tienes %d años.\n",edad) ;
         System.out.printf("Tu valor de tipo real es %.2f.\n", valor) ; 
-        */
-
+         */
         //UTILIZANDO LA CLASE SCANNER---------------------------------------
-
-       Scanner sc = new Scanner(System.in) ;
+        Scanner sc = new Scanner(System.in);
 
         System.out.println("Introduce tu edad: ");
-        edad = sc.nextInt() ; //Lo leo directamente como entero
+        edad = sc.nextInt(); //Lo leo directamente como entero
 
-        System.out.printf("Veo que tienes %d. y en 2025 tendrás %d",edad,++edad);
+        System.out.printf("Veo que tienes %d. y en 2025 tendrás %d", edad, ++edad);
     }
 }

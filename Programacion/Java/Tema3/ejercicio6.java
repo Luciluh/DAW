@@ -19,6 +19,8 @@ public class ejercicio6 {
         area = (base*altura)/2;
         System.out.printf("El area del triangulo es: %.2f cm\u00b2\n", area);
 
+    
+
         sc.close();     
 
     }
