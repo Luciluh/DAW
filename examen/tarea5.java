@@ -41,7 +41,7 @@ public class tarea5 {
         System.out.printf("\033[1mLECTURA ILUSTRADA\033[0m\n");
         System.out.println("============================");
         System.out.printf("%d %25.2f\n", codLib,preUnd); //me falta poner los €
-        System.out.printf("%d uds. %20.2f\n", can,preTotLib); //me falta poner los €
+        System.out.printf("%d uds. %20.2f€\n", can,preTotLib); //me falta poner los €
         System.out.printf("-%.0f%% %23.2f\n", des,preDesc); //me falta poner los € y el - 
         System.out.printf("%d%% IVA %19.2f\n", iva,preiva); //me falta poner los € y el - 
         System.out.printf("\033[100mTOTAL %21.2f\033[0m\n", total ); //me falta poner los € y el - 
