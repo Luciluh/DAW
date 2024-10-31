@@ -35,7 +35,7 @@ public class tarea3 {
         seg2 = hor%60f;
         
 
-        System.out.printf("%f segundos son \033[46m%.0f días\033[0m \033[43m%.0f horas\033[0m \033[41m%.0f minutos\033[0m y \033[42m%.0f segundos\033[0m", seg, dia2, hor2, min2, seg2);
+        System.out.printf("%.0f segundos son \033[46m%.0f días\033[0m \033[43m%.0f horas\033[0m \033[41m%.0f minutos\033[0m y \033[42m%.0f segundos\033[0m", seg, dia2, hor2, min2, seg2);
 
 
         sc.close();
