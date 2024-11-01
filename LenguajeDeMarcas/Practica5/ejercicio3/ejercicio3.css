@@ -4,6 +4,9 @@
     border: solid;
     padding-bottom: 10px;
     justify-items: center;
+    max-width: 500px; /*le doy un ancho max al div*/
+    max-height: 300px; /*le doy un alto max al div*/
+    justify-self: center; /*con el inspeccionar de google he buscado algun elemento que me centre el div y con este se centraba*/
 
 }
 
@@ -12,6 +15,9 @@
     border: solid;
     padding-bottom: 10px;
     justify-items: center;
+    max-width: 500px; /*le doy un ancho max al div*/
+    max-height: 300px; /*le doy un alto max al div*/
+    justify-self: center; /*con el inspeccionar de google he buscado algun elemento que me centre el div y con este se centraba*/
 
 }
 
