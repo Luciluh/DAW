@@ -1,0 +1,50 @@
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f8ff; 
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #6a5acd; 
+}
+
+div {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #ffffff; 
+    border-radius: 10px;
+}
+
+#operando1, #operando2, #operacion {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #d3d3d3; 
+    background-color: #faf0e6; 
+    box-sizing: border-box; /* Para que no se salga de la caja del formulario */
+    margin-bottom: 20px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #ffb6c1; 
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer; /* Para que me salga la manita del raton encima */
+    font-size: 16px;
+    margin-top: 10px; 
+}
+
+#resultado {
+    background-color: #e6e6fa; 
+    color: #555;
+    cursor: not-allowed; /* Para que salga una señal de prohibido al pasar el raton por encima */
+    margin-bottom: 20px; 
+    padding-bottom: 8px;
+}

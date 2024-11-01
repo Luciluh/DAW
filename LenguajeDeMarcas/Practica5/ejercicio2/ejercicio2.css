@@ -1,0 +1,21 @@
+body {
+    background-color: #f9f9f9; 
+    color: #333;
+    text-align: center; 
+}
+
+#dimension {
+    width: 300px; 
+    height: 300px; 
+    border-radius: 10px; 
+}
+
+button {
+    background-color: #4CAF50; /* Color de fondo verde */
+    color: white; /* Color del texto */
+    padding: 10px 20px; /* Relleno interno */
+    border: white; /* Sin borde */
+    cursor: pointer; /* Cambia el cursor al pasar */
+    font-size: 16px; /* Tamaño de fuente */
+    margin: 10px; /* Espaciado vertical */
+}
