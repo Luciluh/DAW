@@ -1,9 +1,22 @@
-h1{
+/* Estilos para el encabezado */
+h1 {
     font-family: "Roboto", sans-serif;
-    font-weight: 100;
     font-style: normal;
+    font-size: 40px; 
+    color: #333; 
+    margin: 20px 0; 
 }
 
-div{
+div {
     background-color: #DAF7DC;
+    padding: 20px;
+    border-radius: 8px; 
+    max-width: 500px; /*le doy un ancho max al div*/
+    max-height: 300px; /*le doy un alto max al div*/
+    justify-self: center; /*con el inspeccionar de google he buscado algun elemento que me centre el div y con este se centraba*/
+
+}
+
+*{
+    text-align: center;
 }
