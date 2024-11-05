@@ -1,4 +1,3 @@
-package Tema4.Ejercicios;
 /*
  * Amplía el programa anterior para que diga la nota del boletín 
  * (insuficiente, suficiente, bien, notable o sobresaliente).

@@ -1,5 +1,3 @@
-package Tema4.Ejercicios;
-
 import java.util.Locale;
 import java.util.Scanner;
 

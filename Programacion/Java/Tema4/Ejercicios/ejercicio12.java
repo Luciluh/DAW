@@ -1,5 +1,3 @@
-package Tema4.Ejercicios;
-
 import java.util.Scanner;
 /*
 Realiza un programa que diga si un número entero introducido por teclado es par y/o divisible entre 5.
