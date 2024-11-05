@@ -10,7 +10,7 @@ public class ejercicio16 {
         System.out.println("Introduce un número entero (de 5 cifras como máximo): ");
         num = sc.nextInt();
 
-        if (num < 10) {
+        if (num>=0 && num < 10) {
             System.out.println("El primer dígito del número introducido es el " + num);
         } else if (num < 100)  {
             resultado = num/10;

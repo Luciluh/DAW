@@ -18,7 +18,7 @@ public class ejercicio8 {
         Scanner sc = new Scanner(System.in).useLocale(Locale.ENGLISH);
 
         System.out.println("Este programa resuelve ecuaciones de segundo grado."); 
-        System.out.println("ax2 + bx + c = 0");
+        System.out.println("ax\u00B2 + bx + c = 0");
         System.out.println("Introduce los valores:");
         System.out.print("a = ");
         a = sc.nextFloat();
@@ -26,10 +26,6 @@ public class ejercicio8 {
         b = sc.nextFloat();
         System.out.print("c = ");
         c = sc.nextFloat();
-
-        sol1 = ((-b) + Math.sqrt(Math.pow(b, 2) - 4*a*c))/(2*a); //primera solucion con la + 
-        sol2 = ((-b) - Math.sqrt(Math.pow(b, 2) - 4*a*c))/(2*a); //segunda solucion con la -
-
         raiz = Math.sqrt(Math.pow(b, 2) - 4*a*c);
 
         // Aquí lo he hecho asi porque solo cuando ambas variables a,b y c son = 0 la ec. tiene infinitas soluciones PERO tambien cuando a=0 (es decir cuando el denominador(a) es = 0) no tiene sol.
@@ -47,6 +43,7 @@ public class ejercicio8 {
             System.out.printf("x1 = %.1f\nx2 = %.1f", sol1,sol2); // mostramos las soluciones por pantalla
         } else if (raiz == 0) {
             sol1 = (-b)/(2*a);
+            System.out.printf("x = %.1f", sol1);
         } else if (raiz < 0) {
             System.out.println("La ecuacion tiene soluciones reales");
         } 

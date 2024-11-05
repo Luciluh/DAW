@@ -23,8 +23,8 @@ public class ejercicio13 {
 
         switch (opcion) {
             case 1:
-                System.out.println("  " + caracter + " ");
-                System.out.println(" " + caracter + caracter + caracter + " ");
+                System.out.println("  " + caracter);
+                System.out.println(" " + caracter + caracter + caracter);
                 System.out.println(caracter + caracter + caracter + caracter + caracter);
                 break;
 
@@ -58,3 +58,18 @@ public class ejercicio13 {
 
     }
 }
+
+/*
+char car;
+String cadena;
+Scanner sc = new Scanner(System.in);
+
+System.out.println("Introduzca el caracter de relleno: ");
+caracter = sc.nextLine();
+car= cadena.charAt(index:0)
+
+*SIMPLIFICANDO*
+car = sc.nextLine().charAt(index:0)
+
+
+ */

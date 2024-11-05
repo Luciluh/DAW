@@ -15,7 +15,7 @@ public class ejercicio1 {
         System.out.print("Introduce un día de la semana y te diré qué asignatura toca a primera hora de ese día:");
         dia = sc.nextLine();
 
-        switch (dia) {
+        switch (dia.toLowerCase()) {
             case "lunes":
                 System.out.println("PROGRAMACION");
                 break;

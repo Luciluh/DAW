@@ -34,6 +34,10 @@ public class importante {
 
         // Para el fondo: \033[48;2;R;G;Bm -> RGB lo buscamos en google con el colorpicker
 
+        //Para queno haya problemas en las mayusculas o minusculas usaremos:
+        toLowerCase()
+        
+
 
     }
 }
