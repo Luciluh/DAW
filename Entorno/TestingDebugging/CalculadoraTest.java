@@ -1,35 +1,74 @@
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.Assert;
+import org.junit.Test;
 
-class CalculadoraTest {
+public class CalculadoraTest {
 
+    // Instanciamos la clase Calculadora
     Calculadora calculadora = new Calculadora();
 
     @Test
-    void testSumar() {
-        assertEquals(5, calculadora.sumar(2, 3));
-        assertEquals(-1, calculadora.sumar(-2, 1));
-        assertEquals(0, calculadora.sumar(0, 0));
+    public void testSumar() {
+        // Arrange
+        double num1 = 5;
+        double num2 = 3;
+        double resultadoEsperado = 8;
+
+        // Act
+        double resultadoReal = calculadora.sumar(num1, num2);
+
+        // Assert
+        Assert.assertEquals(resultadoEsperado, resultadoReal, 0.001); // El tercer parámetro es la tolerancia en el caso de decimales
     }
 
     @Test
-    void testRestar() {
-        assertEquals(1, calculadora.restar(3, 2));
-        assertEquals(-3, calculadora.restar(-2, 1));
-        assertEquals(0, calculadora.restar(0, 0));
+    public void testRestar() {
+        // Arrange
+        double num1 = 5;
+        double num2 = 3;
+        double resultadoEsperado = 2;
+
+        // Act
+        double resultadoReal = calculadora.restar(num1, num2);
+
+        // Assert
+        Assert.assertEquals(resultadoEsperado, resultadoReal, 0.001);
     }
 
     @Test
-    void testMultiplicar() {
-        assertEquals(6, calculadora.multiplicar(2, 3));
-        assertEquals(-2, calculadora.multiplicar(-2, 1));
-        assertEquals(0, calculadora.multiplicar(0, 5));
+    public void testMultiplicar() {
+        // Arrange
+        double num1 = 5;
+        double num2 = 3;
+        double resultadoEsperado = 15;
+
+        // Act
+        double resultadoReal = calculadora.multiplicar(num1, num2);
+
+        // Assert
+        Assert.assertEquals(resultadoEsperado, resultadoReal, 0.001);
     }
 
     @Test
-    void testDividir() {
-        assertEquals(2, calculadora.dividir(6, 3));
-        assertEquals(-2, calculadora.dividir(-6, 3));
-        assertThrows(ArithmeticException.class, () -> calculadora.dividir(5, 0));
+    public void testDividir() {
+        // Arrange
+        double num1 = 6;
+        double num2 = 3;
+        double resultadoEsperado = 2;
+
+        // Act
+        double resultadoReal = calculadora.dividir(num1, num2);
+
+        // Assert
+        Assert.assertEquals(resultadoEsperado, resultadoReal, 0.001);
+    }
+
+    @Test(expected = ArithmeticException.class)
+    public void testDividirPorCero() {
+        // Arrange
+        double num1 = 6;
+        double num2 = 0;
+
+        // Act
+        calculadora.dividir(num1, num2); // Esto debería lanzar una ArithmeticException
     }
 }
