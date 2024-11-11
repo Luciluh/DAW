@@ -14,7 +14,7 @@ public class ejercicio18 {
         num = sc.nextInt();
 
         if (num<10) { //numeros de una cifra
-            System.out.println("El numero introducido NO es capicua");
+            System.out.println("El numero introducido es capicua");
         } else if (num<1000 && (num%10 == num/10) ) { //numeros de dos(XY) y tres cifras (XZY)-> solo serán capicuas si X=Y, por tanto hacemos la igualdad
             System.out.println("El numero introducido es capicua");
         } else if (num<10000 && (num%10 == num/1000) && (((num%100)/10)) == ((num%1000)/100)) {
@@ -28,3 +28,4 @@ public class ejercicio18 {
         sc.close();
     }
 }
+
