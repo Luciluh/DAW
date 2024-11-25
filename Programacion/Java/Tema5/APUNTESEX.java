@@ -58,5 +58,7 @@ Para el texto: \033[38;2;R;G;Bm -> RGB lo buscamos en google con el colorpicker
 
 Para el fondo: \033[48;2;R;G;Bm -> RGB lo buscamos en google con el colorpicker
 
+______________________________________________________
+todo lo que pueda fallar va en el try 
 
 */
