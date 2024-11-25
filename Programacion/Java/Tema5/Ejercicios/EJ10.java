@@ -4,7 +4,7 @@ positivos, y cuántos son negativos.
  */
 import java.util.Scanner;
 
-public class ejercicio10 {
+public class EJ10 {
     public static void main(String[] args) {
 
         int num ;

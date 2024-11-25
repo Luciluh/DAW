@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class ejercicio12 {
+public class EJ12 {
     public static void main(String[] args) {
 
         int base;

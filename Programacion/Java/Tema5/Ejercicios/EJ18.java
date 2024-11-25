@@ -6,7 +6,7 @@ negativo y nos diga cuántos números se han introducido, la media de los impare
 el mayor de los pares. El número negativo sólo se utiliza para indicar el final de la
 introducción de datos pero no se incluye en el cómputo.
 */
-public class ejercicio18 {
+public class EJ18 {
     public static void main(String[] args) {
 
         int num ;

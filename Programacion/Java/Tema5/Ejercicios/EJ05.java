@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class ejercicio5 {
+public class EJ05 {
     public static void main(String[] args) {
         
         int num; 
