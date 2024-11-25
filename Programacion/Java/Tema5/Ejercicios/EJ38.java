@@ -1,3 +1,4 @@
+import java.lang.classfile.CodeBuilder;
 import java.util.Scanner;
 
 public class EJ38 {
@@ -22,6 +23,7 @@ public class EJ38 {
             num = num/10;
         }
         System.out.printf("El %d contiene %d digitos pares y %d digitos impares.",num, pares, impares);
+
         sc.close();
 
     }

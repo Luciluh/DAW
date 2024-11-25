@@ -4,7 +4,6 @@ public class EJ57 {
     public static void main(String[] args) {
 
         int alt ; 
-        int esteriscos;
         int espaciosIzq = 0 ;
         Scanner sc = new Scanner(System.in); 
         
@@ -42,13 +41,5 @@ public class EJ57 {
 
             
         }
-
-
-
-
-
-
-
-        sc.close();
     }
 }

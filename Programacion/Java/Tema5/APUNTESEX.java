@@ -7,8 +7,14 @@ public class vueltasTierra {
 }
 _________________________________________________________________
 
+
+
+
 - GENERAR NUMEROS ALEATORIOS: 
+EN TRAMO
 int num = (int)(Math.random()*(max-min+1)+min)
+SIN TRAMO 
+int
 
 GENERA 10 NUM ALEATORIOS:
 for (int i = 0; i < 10; i++) { 
@@ -59,6 +65,11 @@ Para el texto: \033[38;2;R;G;Bm -> RGB lo buscamos en google con el colorpicker
 Para el fondo: \033[48;2;R;G;Bm -> RGB lo buscamos en google con el colorpicker
 
 ______________________________________________________
-todo lo que pueda fallar va en el try 
+EXCEPCIONES
 
+        try {
+            
+        } catch (Exception e) {   este valor lo copias de la terminal cuando te da error 
+        Aqui ponemos el mensaje de error
+        }
 */
