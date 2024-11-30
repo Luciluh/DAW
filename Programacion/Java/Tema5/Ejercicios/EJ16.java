@@ -5,7 +5,7 @@ teclado.
 */
 import java.util.Scanner;
 
-public class ejercicio16 {
+public class EJ16 {
     public static void main(String[] args) {
         
         char caracter;

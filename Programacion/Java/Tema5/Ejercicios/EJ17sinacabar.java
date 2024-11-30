@@ -1,7 +1,7 @@
 
 import java.util.Scanner;
 
-public class ejercicio17sinacabar {
+public class EJ17sinacabar {
     public static void main(String[] args) {
         char caracter;
         int num;

@@ -1,11 +1,12 @@
 public class EJ02_Palindromo {
     // Creamos la firma de la función que devuelve si una palabra es un palíndromo
     public static boolean esPalindromo(String palabra){
-        return false; // Inicialmente solo retornamos un valor falso
+    
+
     }
 
 
-    public class Palindromo {
+
 
     // Implementamos la función que determina si una palabra es un palíndromo
     public static boolean esPalindromo(String palabra){
@@ -19,4 +20,5 @@ public class EJ02_Palindromo {
         return palabraLimpia.equals(palabraInvertida);
     }
 }
+
 }

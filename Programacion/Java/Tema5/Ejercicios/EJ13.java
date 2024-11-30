@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class ejercicio13 {
+public class EJ13 {
     public static void main(String[] args) {
 
         boolean esPrimo = true ;

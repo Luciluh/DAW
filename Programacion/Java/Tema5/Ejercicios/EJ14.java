@@ -1,7 +1,7 @@
 
 import java.util.Scanner;
 
-public class ejercicio14 {
+public class EJ14 {
     public static void main(String[] args) {
 
         int num ;

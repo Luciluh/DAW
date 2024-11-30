@@ -11,7 +11,7 @@ Introduzca otro número distinto al anterior: 71
 
 import java.util.Scanner;
 
-public class ejercicio15 {
+public class EJ15 {
     public static void main(String[] args) {
 
         int num1;

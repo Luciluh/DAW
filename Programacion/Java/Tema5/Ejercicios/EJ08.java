@@ -4,7 +4,7 @@ primeros números enteros a partir de uno que se introduce por teclado.
  */
 import java.util.Scanner;
 
-public class ejercicio8 {
+public class EJ08 {
     public static void main(String[] args) {
 
         double num;

@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class ejercicio4 {
+public class EJ04ConviAleat {
     private static final int COMBINACION = 8888;
     public static void main(String[] args) {
         

@@ -5,10 +5,8 @@ public class EJ01_InvertirLetrasTest {
     
     @Test
     public void TestInvertirCadena() {
-        // Arrange: Preparamos el dato de entrada
+        // Arrange: Preparamos el dato de entrada y salida
         String amigo = "amigo";
-        
-        // Arrange: Definimos el resultado esperado
         String resultadoEsperado = "ogima";
         
         // Act: Llamamos a la función que queremos probar
