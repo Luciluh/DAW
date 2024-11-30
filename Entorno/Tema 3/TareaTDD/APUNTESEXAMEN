@@ -1,0 +1,119 @@
+Paso 1: Creamos la firma de la función
+
+Archivo: PRAC01_EX.java
+public class EJ01 {
+      public static String invertirCadena (String palabra){
+            return “” ;
+      }
+}
+
+public class -> SIEMPRE VA IGUAL 
+EJ01 -> nombre del archivo
+public static -> SIEMPRE VA IGUAL
+String -> AQUÍ PONDREMOS EL TIPO DE VARIABLE QUE DEVUELVE
+invertirCadena -> NOMBRE DESCRIPTIVO DE LA FUNCIÓN
+String -> AQUÍ PONDREMOS EL TIPO DE VARIABLE QUE TOMARÁ PARA LEER
+palabra -> NOMBRE DE LA VARIABLE QUE EL USUARIO INGRESARÁ POR PANTALLA
+
+ACLARACIÓN: return “” ;
+
+Si sabemos realizar la función iría antes del return y en el interior del return pondremos el nombre de la variable que nos va a devolver y queremos comprobar en el test.
+Si no sabemos realizar la función:
+Si el valor que devuelve es de tipo String el return será : return “ ” ;               
+Si el valor que devuelve es de tipo int el return será: return 0 ;
+
+Recuerda que también existen las variables de tipo boolean que suele ser muy útiles en este tema.
+Paso 2: Importamos la librería 
+
+Click derecho sobre el código
+
+
+
+
+
+
+
+
+
+
+
+
+Clic en “Generate Test…”
+
+
+
+
+
+Pulsamos en “Junit” y se importará la librería 
+
+
+import org.junit.Test; 
+import static org.junit.Assert.assertEquals;
+Paso 3: Creamos el test 
+Repetimos el paso 2 y automáticamente se creará el test. El propio VS te crea un nombre para el test.  
+
+Archivo: PRAC01_EXTest.java
+Import org.junit.Test;
+
+public class PRAC01_EXTest{
+  
+    @Test 
+    Public void testInvertirPalabra(){
+
+
+
+    }
+}
+
+
+De modo que quedaría un archivo con la firma de la función y otro con el test.
+
+
+
+Paso 4: Completamos el test 
+El archivo del test debería de constar mínimo de dos @Test 
+
+Seguiremos la estructura de Arrange, act y assert.
+
+Arrange: Preparamos los datos de entrada (llamémosle “palabra”) dándole nosotros el resultado correcto y también crearemos otra variable (llamémosle “valorEsperado”)  donde escribimos nosotros el resultado que debería de darnos la función. 
+
+Act : Creamos una variable con el resultado real (llamémosle “valorFuncion”) y llamamos a la función que queremos probar. 
+Assert : Comprobamos que los resultados son iguales. valorEsperado debe de ser igual a valorFuncion.
+
+
+
+
+
+
+
+Archivo: PRAC01_EXTest.java
+Import org.junit.Test;
+
+public class PRAC01_EXTest{
+  
+    @Test 
+    public void testInvertirPalabra(){
+
+       //Arrange
+
+       String palabra = “amigo” ; 
+       String valorEsperado = “ogima” ;
+
+
+       //Act     
+       
+       String valorReal = PRAC01_EX.invertirPalabra(palabra) ;
+
+
+       //Assert
+
+       Assert.assertEquals(valorEsperado, valorReal);
+
+    }
+}
+
+
+
+¡¡RECUERDA!!
+
+El test tiene que superarse para que sea válido, es decir esté en verde
