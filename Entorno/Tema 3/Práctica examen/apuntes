@@ -1,0 +1,110 @@
+
+//CREAMOS LA FIRMA DE LA FUNCION
+
+public class Evaluacion{
+
+    public static boolean compruebaEdad40 (int num1, int num2){
+        return false;
+    }
+    
+}
+
+/*
+public class -> SIEMPRE VA IGUAL 
+EJ01 -> nombre del archivo
+public static -> SIEMPRE VA IGUAL
+String -> AQUÍ PONDREMOS EL TIPO DE VARIABLE QUE DEVUELVE
+invertirCadena -> NOMBRE DESCRIPTIVO DE LA FUNCIÓN
+String -> AQUÍ PONDREMOS EL TIPO DE VARIABLE QUE TOMARÁ PARA LEER
+palabra -> NOMBRE DE LA VARIABLE QUE EL USUARIO INGRESARÁ POR PANTALLA
+Si el valor que devuelve es de tipo String el return será : return “ ” ;               
+Si el valor que devuelve es de tipo int el return será: return 0 ;
+Si el valor que devuelve es de tipo boolean el return será: return false ;
+*/
+
+//CREAREMOS TEST: ACCION DE CÓDIGO FUENTE -> GENERATE TEST x2 
+
+import org.junit.Assert;
+import org.junit.Test;
+
+public class EvaluacionTest {
+
+    @Test
+    public void testResultado_15_años_80_años() {
+
+        //Arrange
+        int num1 = 15;
+        int num2 = 80;  
+        boolean resultadoEsperado = true;
+        
+        //Act
+
+        boolean resultadoReal = Evaluacion.compruebaEdad40(num1, num2);
+
+
+        //Assert
+        Assert.assertEquals(resultadoEsperado, resultadoReal);
+    }
+
+//OTRO-----------
+
+public class EJ01 {
+    public static boolean esPar (int num){
+
+        boolean esPar = true;
+        if (num%2==0) {
+            esPar = true;
+        } else {
+            esPar = false;
+        }
+        return esPar;
+    }
+}
+
+//TEST
+import org.junit.Assert;
+import org.junit.Test;
+
+public class EJ01Test {
+    @Test
+    public void testEsPar_7() {
+
+        //Arrange
+        int num = 7;
+        boolean resultadoEsperado = false;
+
+
+        //Act
+        boolean resultadoReal = EJ01.esPar(num);
+
+
+        //Assert
+        Assert.assertEquals(resultadoEsperado, resultadoReal);
+
+    }
+
+    @Test
+    public void testEsPar_8() {
+
+        //Arrange
+        int num = 8;
+        boolean resultadoEsperado = true;
+
+
+        //Act
+        boolean resultadoReal = EJ01.esPar(num);
+
+
+        //Assert
+        Assert.assertEquals(resultadoEsperado, resultadoReal);
+
+    }
+}
+
+/*
+A veces para foat usaremos: 
+        // Assert
+        Assert.assertEquals(resultadoEsperado, resultadoReal, 0.001); // El tercer parámetro es la tolerancia en el caso de decimales
+*/
+
+
