@@ -1,3 +1,4 @@
+package Apuntes;
 /*
 Los arrays con contenedores que almacenan variables de un mismo tipo. 
 Empiezan en 0 siempre y cada una de sus "posiciones" son llamados indices

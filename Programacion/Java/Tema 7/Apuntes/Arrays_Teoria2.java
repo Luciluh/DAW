@@ -1,3 +1,4 @@
+package Apuntes;
 public class Arrays_Teoria2 {
     private static final int MAXIMO = 100;
     public static void main(String[] args) {

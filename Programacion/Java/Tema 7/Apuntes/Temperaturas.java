@@ -1,3 +1,4 @@
+package Apuntes;
 public class Temperaturas {
 
     private static final int DIAS = 372; //suponiendo que todos los meses tienen 31 dias

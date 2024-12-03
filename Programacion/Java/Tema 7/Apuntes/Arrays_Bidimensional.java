@@ -1,3 +1,4 @@
+package Apuntes;
 public class Arrays_Bidimensional {
     
     private static final int DIAS = 31; //suponiendo que todos los meses tienen 31 dias
