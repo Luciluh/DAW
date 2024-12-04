@@ -1,0 +1,30 @@
+body{
+    background-color: beige;
+}
+.flex-container{
+    background-color: #ccc;
+    width: 80%;
+    height: 1000px;
+    margin: 0 auto; /*se centra solo*/
+    border: 1px solid black;
+    display: flex; /*se redimensionan al cambiar el tamaño de la pantalla*/
+    /* flex-direction: row; */
+    /*flex-wrap: nowrap; /*sino caben en una solo linea*/
+    flex-flow: row wrap;
+    justify-content: space-around;
+
+    align-items: flex-start;
+}
+
+.item{
+    border: 1px solid rgb(85,83,83);
+    background-color: white;
+    color: black;
+    font-weight: bold;
+    width: 100px;
+    /* height: 100px; */
+    text-align: center;
+    line-height: 100px;
+    margin: 5px;
+    overflow: hidden/*lo que se desborde que se esconda; */;
+}
