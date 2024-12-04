@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="favicon.ico">
+    <title>Clínica Dental</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <h1>Clínica Dental</h1>
+        </div>
+        <nav class="nav-bar">
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="#ubicacion">Ubicación</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <section id="inicio">
+            <h2>Bienvenido a nuestra Clínica Dental</h2>
+            <p>Nos encargamos de tu salud dental con la más alta calidad.</p>
+        </section>
+
+        <section id="servicios">
+            <h2>Servicios</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Servicio</th>
+                        <th>Descripción</th>
+                        <th>Precio</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Revisión</td>
+                        <td>Chequeo completo de tu salud dental.</td>
+                        <td>50€</td>
+                    </tr>
+                    <tr>
+                        <td>Blanqueamiento</td>
+                        <td>Blanqueo de dientes con láser.</td>
+                        <td>150€</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Vídeo informativo</h3>
+            <iframe src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+        </section>
+
+        <section id="nosotros">
+            <h2>Nosotros</h2>
+            <p>Somos un equipo de profesionales comprometidos con tu salud dental.</p>
+            <img src="image1.jpg" alt="Foto clínica" class="img-1">
+            <img src="image2.png" alt="Equipo dental" class="img-2">
+        </section>
+
+        <section id="contacto">
+            <h2>Contacto</h2>
+            <form action="#">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+
+                <label for="telefono">Teléfono:</label>
+                <input type="number" id="telefono" name="telefono" required>
+
+                <label>Tipo de cita:</label>
+                <input type="radio" id="consulta" name="consulta" value="consulta">
+                <label for="consulta">Consulta</label>
+                <input type="radio" id="urgencia" name="consulta" value="urgencia">
+                <label for="urgencia">Urgencia</label>
+
+                
+                <label for="mensaje">Mensaje adicional:</label>
+                <textarea id="mensaje" name="mensaje" rows="4" cols="50"></textarea>
+                
+                <label>¿Acepta que nos pongamos en contacto con usted?</label>
+                <input type="checkbox" id="asistencia" name="asistencia">
+                <label for="asistencia">Sí</label>
+                
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+
+        <section id="ubicacion">
+            <h2>Ubicación</h2>
+            <iframe src="https://www.google.com/maps/embed?pb=MAP_ID" width="600" height="450" allowfullscreen="" loading="lazy"></iframe>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Clínica Dental. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
