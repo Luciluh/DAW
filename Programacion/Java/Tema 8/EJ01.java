@@ -26,7 +26,17 @@ public class EJ01{
             System.out.println(num + " NO es capicua");
         }   
 
+        //Vamos a ver si un numero es primo 
 
+        if (Matematicas.esPrimo(num)==true) {
+            System.out.println(num + " es primo");
+        } else {
+            System.out.println(num + " NO es primo");
+        }
+
+        //Vamos a ver el siguiente numero primo a uno que ingresemos
+
+        System.out.println("El numero primo siguiente al ingresado es: " + Matematicas.siguientePrimo(num));
 
 
 

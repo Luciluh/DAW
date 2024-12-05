@@ -16,7 +16,7 @@ public class Matematicas {
     }
 
     /**
-     * 
+     * Esta funcion dice si un numero es capicua o no
      * @param num
      * @return boolean
      */
@@ -29,5 +29,39 @@ public class Matematicas {
         }
 
         return esCapiua;
+    }
+
+    /**
+     * Esta funcion nos dice si un numero es primo o no 
+     * @param num
+     * @return boolean
+     */
+    public static boolean esPrimo (int num){
+
+        boolean esPrimo = true; 
+
+        for (int i = 2; i < num/2; i++) {
+            if ((num%i)==0) {
+                esPrimo = false;
+            }
+        }
+        return esPrimo;
+    }
+
+    /**
+     * Esta funcion nos dice el primo siguiente al numero que ingresemos
+     * @param num
+     * @return int 
+     */
+    public static int siguientePrimo (int num){
+
+        int siguentePrimo = 0;
+        num += 1;
+        do {
+            Matematicas.esPrimo(num);
+            num++;
+        } while (!Matematicas.esPrimo(num));
+        siguentePrimo = num;
+        return siguentePrimo;
     }
 }
