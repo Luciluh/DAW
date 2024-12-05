@@ -7,7 +7,7 @@ body {
     color: #333;
 }
 
-/* Header */
+/* Para el header */
 .header {
     background: linear-gradient(to right, #a0c4ff, #ffb3c6);
     padding: 20px;
@@ -37,7 +37,7 @@ body {
     color: #ff7f7f;
 }
 
-/* Main Content */
+/* Para el contenido en sí */
 main {
     padding: 20px;
 }
@@ -79,7 +79,7 @@ iframe {
     margin: 10px auto;
 }
 
-/* Forms */
+/* Formulario. No me encuadra y me salta de linea, necesito darle mas ancho(creo) */
 form {
     display: flex;
     flex-direction: column;
@@ -111,7 +111,7 @@ button:hover {
     background-color: #ff4d4d;
 }
 
-/* Footer */
+/* Footerr */
 .footer {
     background-color: #a0c4ff;
     padding: 10px;
@@ -121,7 +121,7 @@ button:hover {
     width: 100%;
 }
 
-/* Flexbox */
+/* Flexbox, lo dimos en clase el 04/12/24 */
 main {
     display: flex;
     flex-direction: column;
@@ -137,7 +137,7 @@ button {
     animation: bounce 0.5s infinite alternate;
 }
 
-/* Keyframes */
+/* Para la animacion */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -147,6 +147,8 @@ button {
     }
 }
 
+
+/* Quiero cambiar esto y hacer la animacion solo cuando paso el raton, imagino que sera con un hover, pero estoy en ello */
 @keyframes bounce {
     0% {
         transform: translateY(0);
