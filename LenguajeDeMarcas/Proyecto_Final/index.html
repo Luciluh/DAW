@@ -3,45 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Adventure Teeth</title>
     <link rel="icon" href="favicon.ico">
-    <title>Clínica Dental</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style_v3.css">
 </head>
-<!-- Cosas que me van faltando:
-- Me falta buscar las imagenes y el video 
-- Mirar el favicon
-- Meter algun float y no todo tan vertical 
-- Formato del formulario revisarlo
-- Buscar otra idea que poner en la tabla
-- En el footer añadir algun correo ficcticio 
-- Galeria/carrusel de imagenes de tratamientos -->
 <body>
-    <!-- Menu que pongo en la parte de arriba; me gustaria centrarlo un poco y cambiarle la letra a mi clinica dental   -->
-    <header class="header">
-        <div class="logo">
-            <h1>Clínica Dental</h1>
-        </div>
-        <nav class="nav-bar"> <!--navegacion y barras -->
+    <header>
+        <h1>Adventure Teeth</h1>
+        <!-- Creamos el navegador superior de la web -->
+        <nav>
             <ul>
                 <li><a href="#inicio">Inicio</a></li>
                 <li><a href="#servicios">Servicios</a></li>
-                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#instalaciones">Instalaciones</a></li>
                 <li><a href="#contacto">Contacto</a></li>
-                <li><a href="#ubicacion">Ubicación</a></li>
+                <li><a href="#sobremi">Sobre mí</a></li>
+                <li><a href="#preguntas">FAQ</a></li>
             </ul>
         </nav>
     </header>
-
-    <!-- La informacion principal -->
-    <main>
-        <section id="inicio">
-            <h2>Bienvenido a nuestra Clínica Dental</h2>
-            <p>Nos encargamos de tu salud dental con la más alta calidad.</p>
-        </section>
-
-        <section id="servicios">
-            <h2>Servicios</h2>
+    
+    <section id="instalaciones">
+        <h2>Bienvenidos a Adventure Teeth</h2>
+        <div class="carousel">
+            <img src="recursos/image (1).png" alt="imagen1">
+            <img src="recursos/image (2).png" alt="imagen2">
+            <img src="recursos/image (3).png" alt="imagen3">
+            <img src="recursos/image.png" alt="imagen4">
+        </div>
+    </section>
+    <!-- 2º seccion -->
+    <section id="servicios">
+        <h2>Servicios</h2>
+        <!-- Primera tabla: Prevención y Cuidado Dental Infantil -->
+        <h3>Prevención y Cuidado Dental Infantil</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Servicio</th>
+                    <th>Descripción</th>
+                    <th>Precio</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Primera visita</td>
+                    <td>Enseñar a los niños y padres sobre la importancia del cepillado y el uso del hilo dental y hacerle una primera revisión</td>
+                    <td>Gratuito</td>
+                </tr>
+                <tr>
+                    <td>Fluorización + Higiene</td>
+                    <td>Realización de higiene dental + aplicación de flúor para fortalecer el esmalte dental y prevenir caries.</td>
+                    <td>30€</td>
+                </tr>
+                <tr>
+                    <td>Selladores dentales</td>
+                    <td>Aplicación de selladores en los molares para prevenir caries en las fosas y fisuras.</td>
+                    <td>10€/pieza</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <!-- Segunda tabla: Tratamientos Restaurativos -->
+        <h3>Tratamientos Restaurativos</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Servicio</th>
+                    <th>Descripción</th>
+                    <th>Precio</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Tratamiento de caries</td>
+                    <td>Restauración de los dientes afectados por caries con empastes o coronas.</td>
+                    <td>40€/diente</td>
+                </tr>
+                <tr>
+                    <td>Endodoncia pediátrica</td>
+                        <td>En casos de caries avanzadas, se realiza un tratamiento de conductos en dientes temporales.</td>
+                        <td>60€</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <!-- Tercera tabla: Ortodoncia Infantil -->
+            <h3>Ortodoncia Infantil</h3>
             <table>
                 <thead>
                     <tr>
@@ -52,65 +100,136 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Revisión</td>
-                        <td>Chequeo completo de tu salud dental.</td>
-                        <td>50€</td>
+                        <td>Derivación ortodoncia</td>
+                        <td>Primera visita con ortodoncia para diagnóstico.</td>
+                        <td>Gratuito</td>
                     </tr>
                     <tr>
-                        <td>Blanqueamiento</td>
-                        <td>Blanqueo de dientes con láser.</td>
-                        <td>150€</td>
+                        <td>Ortodoncia interceptiva</td>
+                        <td>Tipo de ortodoncia que se aplica con el objetivo de favorecer el crecimiento del hueso maxilar, así como de la mandíbula.</td>
+                        <td>A valorar</td>
                     </tr>
                 </tbody>
             </table>
-
-            <h3>Vídeo informativo</h3>
-            <iframe src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+            
+            <!-- Cuarta tabla: Sedación -->
+            <h3>Sedación</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Servicio</th>
+                        <th>Descripción</th>
+                        <th>Precio</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Sedación simple</td>
+                        <td>Sedación simple sin necesidad de anestesia general</td>
+                        <td>300€</td>
+                    </tr>
+                    <tr>
+                        <td>Sedación compleja</td>
+                        <td>Sedación simple con necesidad de anestesia general</td>
+                        <td>700€</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>      
+        
+        <!-- 1º seccion -->
+        <section id="inicio">
+            <p>Somos una clínica especializada en odontología infantil, enfocada en niños con diferentes discapacidades.</p>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/uL2zig0MBNU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </section>
-
-        <section id="nosotros">
-            <h2>Nosotros</h2>
-            <p>Somos un equipo de profesionales comprometidos con tu salud dental.</p>
-            <img src="image1.jpg" alt="Foto clínica" class="img-1">
-            <img src="image2.png" alt="Equipo dental" class="img-2">
+        
+        <section id="sobre-mi">
+            <h2>Sobre mí</h2>
+            <p>¡Hola! 
+                Soy Lucía Villena, tengo 27 años y, aunque actualmente me encuentro estudiando Desarrollo de Aplicaciones Web, mi verdadera pasión y dedicación ha sido siempre el ámbito dental. A lo largo de estos años, lo que más me ha enriquecido de mi profesión es trabajar con niños, y si mi camino continúa por el mundo de la odontología, me gustaría enfocarme en la odontopediatría orientada a pacientes con discapacidad. Sin embargo, mi verdadera ambición es poder explorar y encontrar nuevas formas de integrar la informática en el ámbito dental, con la esperanza de hacer un descubrimiento que aún no se haya logrado.
+            </p>
+            <img src="recursos/avatar.png" alt="Avatar Lucía" class="avatar">
         </section>
+        
+        <section id="faq">
+            <h2>Preguntas Frecuentes</h2>
+            <div class="faq-item">
+                <h3>1. ¿A qué edad debo llevar a mi hijo a su primera visita al dentista?</h3>
+                <p>Lo ideal es llevar a tu hijo al dentista antes de su primer cumpleaños o cuando le salga el primer diente. Esto permite una evaluación temprana y el inicio de buenos hábitos dentales.</p>
+        </div>
+        <div class="faq-item">
+            <h3>2. ¿Cómo puedo preparar a mi hijo para una visita al dentista?</h3>
+            <p>Habla con él de manera positiva sobre la visita, explicándole que no es algo doloroso y que el dentista está allí para ayudarle a tener dientes sanos. Puedes leerle cuentos o mostrarle vídeos educativos.</p>
+        </div>
+        <div class="faq-item">
+            <h3>3. ¿Qué son los selladores dentales y por qué son importantes?</h3>
+            <p>Los selladores dentales son una capa protectora que se aplica sobre los molares para prevenir las caries, especialmente en las áreas donde los niños tienen más dificultad para cepillarse.</p>
+        </div>
+        <div class="faq-item">
+            <h3>4. ¿Es seguro que mi hijo reciba anestesia durante un tratamiento dental?</h3>
+            <p>Sí, en nuestra clínica, la anestesia que utilizamos es completamente segura y adecuada para los niños. Siempre evaluamos las necesidades específicas de cada paciente para asegurarnos de que estén cómodos y seguros.</p>
+        </div>
+        <div class="faq-item">
+            <h3>5. ¿Qué debo hacer si mi hijo tiene dolor dental o una urgencia fuera del horario de consulta?</h3>
+            <p>En caso de urgencia, como dolor dental o un diente roto, te recomendamos que nos llames inmediatamente para recibir orientación y, si es necesario, programar una cita urgente.</p>
+        </div>
+    </section>
+    
+    <section id="contacto">
+        <h2>Contacto</h2>
+        <form action="/enviar-cita" method="POST">
+            <fieldset>
+                <legend>Información de contacto</legend>
+                <!-- Nombre -->
+                <label for="nombre">Nombre <span style="color: red;">*</span></label>
+                <input type="text" id="nombre" name="nombre" required placeholder="Ingresa tu nombre">
+                <br><br>
+        
+                <!-- Apellidos -->
+                <label for="apellidos">Apellidos <span style="color: red;">*</span></label>
+                <input type="text" id="apellidos" name="apellidos" required placeholder="Ingresa tus apellidos">
+                <br><br>
 
-        <section id="contacto">
-            <h2>Contacto</h2>
-            <form action="#">
-                <label for="nombre">Nombre:</label>
-                <input type="text" id="nombre" name="nombre" required>
+                <!-- Teléfono -->
+                <label for="telefono">Teléfono</label>
+                <input type="tel" id="telefono" name="telefono" placeholder="Ingresa tu número de teléfono">
+                <br><br>
+        
+                <!-- Correo Electrónico -->
+                <label for="email">Correo Electrónico</label>
+                <input type="email" id="email" name="email" placeholder="Ingresa tu correo electrónico">
+                <br><br>
+            </fieldset>
 
-                <label for="telefono">Teléfono:</label>
-                <input type="number" id="telefono" name="telefono" required>
-
-                <label>Tipo de cita:</label>
-                <input type="radio" id="consulta" name="consulta" value="consulta">
-                <label for="consulta">Consulta</label>
-                <input type="radio" id="urgencia" name="consulta" value="urgencia">
+            <fieldset>
+                <legend>Detalles de la cita</legend>
+                <label for="tipo-cita">Tipo de cita <span style="color: red;">*</span></label><br>
+                <input type="radio" id="primera-visita" name="tipo-cita" value="Primera visita" required>
+                <label for="primera-visita">Primera visita</label><br>
+                <input type="radio" id="consulta" name="tipo-cita" value="Consulta">
+                <label for="consulta">Consulta</label><br>
+                <input type="radio" id="urgencia" name="tipo-cita" value="Urgencia">
                 <label for="urgencia">Urgencia</label>
+                <br><br>
+            </fieldset>
 
-                
-                <label for="mensaje">Mensaje adicional:</label>
-                <textarea id="mensaje" name="mensaje" rows="4" cols="50"></textarea>
-                
-                <label>¿Acepta que nos pongamos en contacto con usted?</label>
-                <input type="checkbox" id="asistencia" name="asistencia">
-                <label for="asistencia">Sí</label>
-                
-                <button type="submit">Enviar</button>
-            </form>
-        </section>
-
-        <section id="ubicacion">
-            <h2>Ubicación</h2>
-            <iframe src="https://www.google.com/maps/embed?pb=MAP_ID" width="600" height="450" allowfullscreen="" loading="lazy"></iframe>
-        </section>
-    </main>
-
-    <!-- Footer que me gustaria añadir email y contacto -->
-    <footer class="footer">
-        <p>&copy; 2024 Clínica Dental. Todos los derechos reservados.</p>
+            <fieldset>
+                <legend>¿Cómo nos conociste?</legend>
+                <label for="referencia">¿Cómo nos encontraste?</label>
+                <select id="referencia" name="referencia">
+                    <option value="Internet">Internet</option>
+                    <option value="Recomendación">Recomendación</option>
+                    <option value="Publicidad">Publicidad</option>
+                    <option value="Otros">Otros</option>
+                </select>
+                <br><br>
+            </fieldset>
+            <input type="submit" value="Solicitar cita" class="btn-submit">
+        </form>
+    </section>
+    
+    <footer>
+        <p>Adventure Teeth &copy; 2024 | Todos los derechos reservados</p>
     </footer>
 </body>
 </html>
