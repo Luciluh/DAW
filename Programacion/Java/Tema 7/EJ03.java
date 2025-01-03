@@ -14,8 +14,8 @@ public class EJ03 {
 
         System.out.println("Los numeros introducidos, al reves, son los siguientes: ");
 
-        for (int i = 10; i < 0; i--) {
-            System.out.println(num[i]);
+        for (int j = 9; j >= 0; j--) {
+            System.out.println(num[j]);
         }
 
         sc.close();

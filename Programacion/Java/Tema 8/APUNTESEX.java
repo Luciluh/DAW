@@ -44,8 +44,8 @@ invertido = Long.parseLong(numeroInvertidoStr);  // Convertimos el String a long
 ________________________________________________________________
 Para cuadrar: 
 System.out.printf("\033[1mLECTURA ILUSTRADA\n========================================\033[0m\n");
-        System.out.printf("%-30s %8.2f€\n",codigo, precio);
-        System.out.printf("%-30s %8.2f€\n",cantidad + " uds.", precioTotal);
+        
+
         System.out.printf("%-30s %8.2f€\n","-" + descuento + "%", -descuentoAplicado);
         System.out.printf("%-30s %8.2f€\n","21% IVA", impuesto);
         System.out.printf("\033[1m\033[100m%-30s %8.2f€\033[0m\n","TOTAL",precioTotal-descuentoAplicado+impuesto);
