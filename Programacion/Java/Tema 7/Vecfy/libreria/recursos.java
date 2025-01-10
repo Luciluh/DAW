@@ -24,12 +24,17 @@ public class recursos {
             System.out.println("0. Salir");
     }
 
+    /**
+     * Rellena un array con numeros aleatorios pidiendo el rango de los numeros aleatorios
+     * @param a
+     * @param min
+     * @param max
+     */
     public static void rellenarAleatorio(int[]a, int min, int max){
 
         for (int i = 0; i < a.length; i++) {
             a[i] = (int)(Math.random()*(max-min+1)+min);
         }
-
     }
 
     /**
@@ -58,4 +63,87 @@ public class recursos {
         }
         return resultado;
     } 
+
+
+    /**
+     * Funcion para sumar dos vectores
+     * @param vectorA
+     * @param vectorB
+     * @return
+     */
+    public static int[] sumaVectores (int [] vectorA, int [] vectorB){
+
+        int [] resultado = new int[10];
+
+        for (int i = 0; i < vectorA.length; i++) {
+            resultado[i] = vectorA[i] + vectorB[i];
+        }
+        return resultado;
+    }
+
+    /**
+     * Funcion para restar dos vectores
+     * @param vectorA
+     * @param vectorB
+     * @return
+     */
+    public static int[] restaVectores (int [] vectorA, int [] vectorB){
+
+        int [] resultado = new int[10];
+
+        for (int i = 0; i < vectorA.length; i++) {
+            resultado[i] = vectorA[i] - vectorB[i];
+        }
+        return resultado;
+    }
+
+    /**
+     * Funcion para calcular el producto escalar de vectores
+     * @param vector
+     * @param producto
+     * @return
+     */
+    public static int[] productoEscalar (int[] vector, int producto){
+
+        int resultado [] = new int [10];
+
+        for (int i = 0; i < vector.length; i++) {
+            resultado[i] = vector[i]*producto;
+        }
+        return resultado;
+    }
+
+
+    /**
+     * Funcion para calcular la frecuencia de un numero por vector
+     * @param vector
+     * @param num
+     * @return
+     */
+    public static int calcularFrecuencia (int [] vector, int num){
+
+        int resultado = 0;
+
+        for (int i = 0; i < vector.length; i++) {
+            if (vector[i]==num) {
+                resultado++;
+            }
+        }
+        return resultado;
+    }
+
+    public static boolean buscarElemento (int [] vector, int num){
+
+        boolean seEncuentra = true;
+
+        for (int i = 0; i < vector.length; i++) {
+            if (vector[i] != num) {
+                seEncuentra = false;
+            } else {  
+                seEncuentra = true;
+            }
+        }
+
+        return seEncuentra;
+    }
 }

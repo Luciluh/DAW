@@ -1,0 +1,9 @@
+- Si quiero sumar dos arrays y son de distinto tamaño, tngo que poner al resultado un limite de capacidad. Este limite 
+lo marca el tamaño del array mas pequeño. 
+
+Ej:
+// Aseguramos que los vectores tengan el mismo tamaño
+    int tamaño = Math.min(vectorA.length, vectorB.length);
+    int[] resultado = new int[tamaño];
+
+- Para concatenar Arrays y poder imprimirlos por consola si nos da error deberemos de usar el metodo: Arrays.toString()
