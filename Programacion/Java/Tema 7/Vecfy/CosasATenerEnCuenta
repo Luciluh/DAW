@@ -33,3 +33,32 @@ public static void pausa() {
        System.out.println("El hilo fue interrumpido.");
    }
 }
+
+//diagonal
+    public static void main(String[] args) {
+        // Declarar un array de ejemplo
+        int[][] array = {
+            {1, 2, 3, 4, 5},
+            {6, 7, 8, 9, 10},
+            {11, 12, 13, 14, 15},
+            {16, 17, 18, 19, 20}
+        };
+        
+        // Inicializar variables para la suma y el conteo
+        int sum = 0;
+        int count = 0;
+        
+        // Recorrer la diagonal de la esquina superior derecha a la esquina inferior izquierda
+        for (int i = 0; i < array.length; i++) {
+            int j = array[i].length - 1 - i; // Calcular la columna correspondiente
+            sum += array[i][j]; // Sumar el valor en la diagonal
+            count++; // Incrementar el conteo de elementos
+        }
+        
+        // Calcular la media
+        double average = (double) sum / count;
+        
+        // Imprimir el resultado
+        System.out.println("La suma de la diagonal es: " + sum);
+        System.out.println("El promedio de la diagonal es: " + average);
+    }
