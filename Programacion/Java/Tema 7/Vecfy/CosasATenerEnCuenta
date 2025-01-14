@@ -7,3 +7,29 @@ Ej:
     int[] resultado = new int[tamaño];
 
 - Para concatenar Arrays y poder imprimirlos por consola si nos da error deberemos de usar el metodo: Arrays.toString()
+
+-Funcion para invertir el array 
+
+    public static int[] invertir(int[] vector) {
+            
+        int[] resultado = new int[vector.length];
+
+        // Rellenar el array resultado con los elementos en orden invertido
+        for (int i = 0; i < vector.length; i++) {
+            resultado[i] = vector[vector.length - 1 - i];
+        }
+
+        return resultado;
+    }
+
+-     /**
+* Funcion para dar tiempo de pausa 
+*/
+public static void pausa() {
+   
+   try {
+       Thread.sleep(1000); // Pausa de 1 segundo
+   } catch (InterruptedException e) {
+       System.out.println("El hilo fue interrumpido.");
+   }
+}

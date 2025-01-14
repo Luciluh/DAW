@@ -1,5 +1,7 @@
 package libreria;
 
+import java.util.Arrays;
+
 public class recursos {
 
     /**
@@ -42,7 +44,6 @@ public class recursos {
      * @param a
      */
     public static void mostrar (int[]a){
-        System.out.print("El vector es: ");
         for (int i = 0; i < a.length; i++) {
             System.out.print(a[i] + " ");
         }
@@ -132,18 +133,168 @@ public class recursos {
         return resultado;
     }
 
+    /**
+     * Buscamos un numero en el vector
+     * @param vector
+     * @param num
+     * @return
+     */
     public static boolean buscarElemento (int [] vector, int num){
 
-        boolean seEncuentra = true;
+        boolean seEncuentra = false;
 
         for (int i = 0; i < vector.length; i++) {
-            if (vector[i] != num) {
-                seEncuentra = false;
-            } else {  
+            if (vector[i] == num) {
                 seEncuentra = true;
+            } 
+        }
+        return seEncuentra;    
+    }
+
+    /**
+     * Funcion para calcular el maximo
+     * @param vector
+     * @return
+     */
+    public static int maximo(int[]vector){
+
+        int numMaximo = 0;
+
+        for (int i = 0; i < vector.length; i++) {
+            if (vector[i]>numMaximo){
+                numMaximo=vector[i];
+            }
+        }
+        return numMaximo;
+    }
+
+    /**
+     * Funcion que calcula el minimo
+     * @param vector
+     * @return
+     */
+    public static int minimo(int[]vector){
+
+        int numMinimo = 0;
+
+        for (int i = 0; i < vector.length; i++) {
+            if (vector[i]<numMinimo){
+                numMinimo=vector[i];
             }
         }
 
-        return seEncuentra;
+        return numMinimo;
     }
+
+    /**
+     * Calcula la media del vector
+     * @param vector
+     * @return
+     */
+    public static int mediaAritmetica (int[]vector){
+
+        int resultado = 0;
+
+        resultado = sumaAcumulativa(vector)/10;
+        return resultado;
+    }
+
+    /**
+     * Esta funcion invierte el orden del array
+     * @param vector
+     * @return
+     */
+    public static int[] invertir(int[] vector) {
+        
+        int[] resultado = new int[vector.length];
+    
+        for (int i = 0; i < vector.length; i++) {
+            resultado[i] = vector[vector.length - 1 - i];
+        }   
+        return resultado;
+    }
+
+    /**
+     * Funcion que te dice si los valores i del vecto A y B son iguales o no 
+     * @param vectorA
+     * @param vectorB
+     * @return
+     */
+    public static boolean comparar(int[]vectorA, int[]vectorB){
+
+        boolean sonIguales = true;
+
+        for (int i = 0; i < vectorA.length; i++) {
+            if (vectorA[i]!=vectorB[i]) {
+                sonIguales=false;
+            }
+        }
+        return sonIguales;
+    }
+
+    /**
+     * Funcion para eliminar los duplicados 
+     * @param vector
+     */
+    public static int[] eliminarDuplicados (int[]vector){
+
+        int[] resultado = vector;
+
+        for (int i = 0; i < vector.length; i++) {
+            int aux = vector[i];
+            for (int j = i+1; j < vector.length; j++) {
+                if (aux==vector[j]) {
+                    resultado[i]=0;
+                    resultado[j]=0;
+                }
+            }
+        }
+        return resultado;
+    }
+
+    /**
+     * Esta funcion ordena el vector con el metodo de la burbuja
+     * @param vector
+     * @param debug
+     * @return
+     */
+    public static int[] burbuja(int[] vector, boolean debug) {
+    int[] resultado = vector;
+    
+    for (int i = 0; i < resultado.length - 1; i++) { 
+        for (int j = 0; j < resultado.length - 1 - i; j++) { 
+            if (resultado[j] > resultado[j + 1]) {
+                int temp = resultado[j];
+                resultado[j] = resultado[j + 1];
+                resultado[j + 1] = temp;
+            }
+        }
+        
+        if (debug==true) {
+            System.out.println("Iteración " + (i + 1) + ": " + Arrays.toString(resultado));
+        }
+    }
+    
+    return resultado;
+}
+
+/**
+ * Concatena dos arrays
+ * @param vectorA
+ * @param vectorB
+ * @return
+ */
+public static void concatenar (int[]vectorA,int[]vectorB){
+    // int[] resultado = new int[vectorA.length + vectorB.length];
+
+    for (int i = 0; i < vectorA.length; i++) {
+        System.out.print(vectorA[i] + " ");
+    }
+    for (int i = 0; i < vectorB.length; i++) {
+        System.out.print(vectorB[i]+ " ");
+    }
+
+}
+
+
 }
