@@ -1,3 +1,5 @@
+--RELACION 3
+
 --1. Obtener por orden alfabético los nombres de los empleados cuyos salarios superen la mitad del
 --salario del empleado 180.
 SELECT NOMEM
