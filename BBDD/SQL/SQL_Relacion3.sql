@@ -1,172 +1,135 @@
---RELACION 3
+/*1. Obtener por orden alfabético los nombres de los empleados cuyos salarios superen la mitad del salario del
+empleado 180.*/
 
---1. Obtener por orden alfabético los nombres de los empleados cuyos salarios superen la mitad del
---salario del empleado 180.
-SELECT NOMEM
-FROM dbo.temple
-WHERE SALAR > (SELECT SALAR / 2 FROM dbo.temple WHERE NUMEM = 180)
-ORDER BY NOMEM;
+SELECT nomem 
+FROM temple
+WHERE salar > (SELECT salar FROM temple WHERE numem = 180)/50
+ORDER BY 1;
 
+/*2. Obtener por orden alfabético los nombres de los empleados cuyos salarios superan dos veces al mínimo salario
+de los empleados del departamento 121.*/
 
-
---2. Obtener por orden alfabético los nombres de los empleados cuyos salarios superen dos veces al
---mínimo salario de los empleados del departamento 121.
-SELECT NOMEM
-FROM dbo.temple
-WHERE SALAR > (2 * (SELECT MIN(SALAR) FROM dbo.temple WHERE NUMDE = 121))
-ORDER BY NOMEM;
+SELECT nomem
+FROM temple
+WHERE salar > (SELECT MIN(salar*2) FROM temple WHERE numde=121)
+ORDER BY 1;
 
 
+/*3.Obtener por orden alfabético los nombres y los salarios de los empleados cuyo salario es inferior a tres veces la
+comisión más baja existente distinta de NULL.*/
 
---3. Obtener por orden alfabético los nombres y los salarios de los empleados cuyo salario es inferior
---a tres veces la comisión más baja existente distinta de NULL.
-SELECT NOMEM, SALAR
-FROM dbo.temple
-WHERE SALAR < (3 * (SELECT MIN(COMIS) FROM dbo.temple WHERE COMIS IS NOT NULL))
-ORDER BY NOMEM;
+SELECT nomem, salar
+FROM temple 
+WHERE salar < (SELECT MIN(comis*3) FROM temple)
+ORDER BY 1,2;
 
+/*4. Obtener, utilizando el predicado BETWEEN, por orden alfabético los números (identificador único), nombres y los  salarios de 
+los empleados con hijos cuyo salario dividido por su número de hijos cumpla una, o ambas, de las dos condiciones siguientes:
+-Que sea inferior a 1200 Euros.
+-Que sea superior al doble de su comisión.*/
 
-
---4. Obtener, utilizando el predicado BETWEEN, por orden alfabético los números (identificador
---único), los nombres y los salarios de los empleados con hijos cuyo salario dividido por su número
---de hijos cumpla una, o ambas, de las dos condiciones siguientes:
--- -Que sea inferior a 1200 euros.
--- -Que sea superior al doble de su comisión.
-SELECT NUMEM, NOMEM, SALAR
-FROM dbo.temple
-WHERE NUMHI > 0 
-  AND (SALAR / NUMHI BETWEEN 0 AND 1200 OR SALAR / NUMHI > 2 * COALESCE(COMIS, 0))
-ORDER BY NOMEM;
-
-
-
---5. Obtener por orden alfabético los nombres de los empleados cuyo primer apellido es Mora o
---empieza por Mora.
-SELECT NOMEM
-FROM dbo.temple
-WHERE NOMEM LIKE 'Mora%'
-ORDER BY NOMEM;
-
-
-
---6. Obtener por orden alfabético los nombres de los empleados cuyo primer apellido termina en EZ y
---su nombre de pila termina en O y tiene al menos tres letras.
-SELECT NOMEM
-FROM dbo.temple
-WHERE NOMEM LIKE '%EZ' AND SUBSTRING(NOMEM, 1, 1) LIKE '[A-Z]' AND LEN(SUBSTRING(NOMEM, CHARINDEX(' ', NOMEM) + 1, LEN(NOMEM))) >= 3
-ORDER BY NOMEM;
-
-
-
---7. Obtener, utilizando el predicado IN, por orden alfabético los nombres de los empleados del
---departamento 111 cuyo salario es igual a alguno de los salarios del departamento 112.
-
-SELECT NOMEM
-FROM dbo.temple
-WHERE NUMDE = 111
-  AND SALAR IN (SELECT SALAR FROM dbo.temple WHERE NUMDE = 112)
-ORDER BY NOMEM;
-
---¿Cómo lo obtendrías con el predicado ANY?
-
-SELECT NOMEM
-FROM dbo.temple
-WHERE NUMDE = 111
-  AND SALAR = ANY (SELECT SALAR FROM dbo.temple WHERE NUMDE = 112)
-ORDER BY NOMEM;
-
-
-
---8. A. Obtener por orden alfabético los nombres y comisiones de los empleados del
---departamento 110 si hay en él algún empleado que tenga comisión.
-SELECT NOMEM, COMIS
-FROM dbo.temple
-WHERE NUMDE = 110 AND EXISTS (SELECT 1 FROM dbo.temple WHERE NUMDE = 110 AND COMIS IS NOT NULL)
-ORDER BY NOMEM;
-
-
-
---9. Obtener por orden alfabético los nombres de los departamentos que tienen algún empleado
---sin comisión. Hacer el ejercicio de cuatro formas diferentes
-
-SELECT NOMDE
-FROM dbo.tdepto
-WHERE EXISTS (
-    SELECT 1
-    FROM dbo.temple
-    WHERE NUMDE = dbo.tdepto.NUMDE AND COMIS IS NULL
+SELECT numem, nomem, salar
+FROM temple
+WHERE numhi > 0 
+AND (
+    (salar / numhi BETWEEN 0 AND 1200)  -- Condición 1: Inferior a 1200 Euros
+    OR (salar / numhi BETWEEN (ISNULL(comis, 0) * 2) + 1 AND 1000000) -- Condición 2: Mayor al doble de su comisión
 )
-ORDER BY NOMDE;
+ORDER BY 2;
 
---ANY
+/*5.Obtener por orden alfabético los nombres de los empleados cuyo primer apellido es Mora o empieza por Mora.*/
+
+SELECT nomem
+FROM temple
+WHERE nomem LIKE 'MORA%'
+ORDER BY 1;
+
+/*6. Obtener por orden alfabético los nombres de los empleados cuyo primer apellido termina en EZ y su nombre de
+pila termina en O y tiene al menos tres letras.*/
+
+SELECT nomem 
+FROM temple 
+WHERE nomem LIKE '%ez,%___O'
+ORDER BY 1;
+
+/*7. Obtener, utilizando el predicado IN, por orden alfabético los nombres de los empleados del departamento 111 cuyo
+salario es igual a alguno de los salarios del departamento 112 ¿Cómo lo obtendrías con el predicado ANY?.*/
+
+SELECT nomem
+FROM temple
+WHERE numde = 111 
+  AND salar IN (   --La condición salar IN (...) significa que solo se seleccionarán aquellos empleados del departamento 111 cuyo salario esté en la lista de salarios del departamento 112.
+      SELECT salar
+      FROM temple
+      WHERE numde = 112
+  )
+ORDER BY 1;
+
+
+SELECT nomem
+FROM temple
+WHERE numde = 111 
+	AND salar = ANY (
+		SELECT salar
+		FROM temple
+		WHERE numde = 112)
+ORDER BY 1;
+
+ 
+ /*8. Obtener por orden alfabético los nombres y comisiones de los empleados del departamento 110 si hay en él algún
+empleado que tenga comisión.*/
+
+SELECT nomem, comis, numde
+FROM temple
+WHERE numde = 110
+ORDER BY 1;
+
+
+/*9. Obtener por orden alfabético los nombres de los departamentos que tienen algún empleado sin comisión*/
+
+SELECT nomde
+FROM tdepto A JOIN temple B ON (A.numde = B.numde)
+WHERE comis IS NULL
+ORDER BY 1;
+
+
+/*10. Para los departamentos cuyo nombre empieza por las letras O o P, mostrar el nombre del departamento y el nombre
+del departamento del que depende.*/
+
+-- REFLEXIVAS 
+
+SELECT T1.nomde,T2.nomde
+FROM tdepto T1 JOIN tdepto T2 ON (T1.depde=T2.numde)
+WHERE T1.nomde LIKE '[OP]%';
+
+/*11. Para los departamentos del centro 20 obtener el nombre del departamento y el nombre del director.*/
+
+
+SELECT nomde,nomem
+FROM tdepto A JOIN temple B ON (A.direc=B.numem)
+WHERE A.numce = 20;
+
+
+
+/*12. Obtener el nombre de los departamentos que no tienen empleados con menos de dos hijos. Realiza la consulta primero
+con un predicado ALL y después con un predicado EXISTS.*/
+
+--ALL 
+SELECT nomde
+FROM tdepto D
+WHERE 2 <= ALL (
+    SELECT numhi
+    FROM temple E
+    WHERE D.numde = E.numde);
+
+--EXISTS
 SELECT NOMDE
-FROM dbo.tdepto
-WHERE NUMDE = ANY (
-    SELECT NUMDE
-    FROM dbo.temple
-    WHERE COMIS IS NULL
-)
-ORDER BY NOMDE;
-
---IN
-
-SELECT NOMDE
-FROM dbo.tdepto
-WHERE NUMDE IN (
-    SELECT NUMDE
-    FROM dbo.temple
-    WHERE COMIS IS NULL
-)
-ORDER BY NOMDE;
-
---JOIN
-
-SELECT DISTINCT tdepto.NOMDE
-FROM dbo.tdepto
-JOIN dbo.temple ON tdepto.NUMDE = temple.NUMDE
-WHERE temple.COMIS IS NULL
-ORDER BY tdepto.NOMDE;
-
-
-
---10. Para los departamentos cuyo nombre empieza por las letras O o P, mostrar el nombre del
---departamento y el nombre del departamento del que depende.
-
-SELECT t1.NOMDE AS Departamento, t2.NOMDE AS Departamento_Depende
-FROM dbo.tdepto t1
-LEFT JOIN dbo.tdepto t2 ON t1.DEPDE = t2.NUMDE
-WHERE t1.NOMDE LIKE 'O%' OR t1.NOMDE LIKE 'P%'
-ORDER BY t1.NOMDE;
-
-
---11. Para los departamentos del centro 20 obtener el nombre del departamento y el nombre del
---director.
-
-SELECT t1.NOMDE AS Departamento, t2.NOMEM AS Director
-FROM dbo.tdepto t1
-JOIN dbo.temple t2 ON t1.NUMDE = t2.NUMDE
-WHERE t1.NUMCE = 20
-ORDER BY t1.NOMDE;
-
-
---12. Obtener el nombre de los departamentos que no tienen empleados con menos de dos hijos.
---Realiza la consulta primero con un predicado ALL y después con un predicado EXISTS.
-
-SELECT NOMDE
-FROM dbo.tdepto
-WHERE NUMDE NOT IN (
-    SELECT NUMDE
-    FROM dbo.temple
-    WHERE NUMHI < 2
-)
-ORDER BY NOMDE;
-
-
-SELECT NOMDE
-FROM dbo.tdepto t
+FROM tdepto D
 WHERE NOT EXISTS (
-    SELECT 1
-    FROM dbo.temple
-    WHERE NUMDE = t.NUMDE AND NUMHI < 2
-)
-ORDER BY NOMDE;
+    SELECT *
+    FROM temple E
+    WHERE E.numde = D.numde AND numhi < 2);
+
+
+
+
