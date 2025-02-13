@@ -44,7 +44,7 @@ public class Gato extends Mascota {
      */
     @Override
     public void pasear(){
-        if (!estado) {
+        if (!estado()) {
             System.out.println(getNombre() + " no puede pasear hasta no se vacunado/a");
         } else {
             maullar();
@@ -53,7 +53,6 @@ public class Gato extends Mascota {
 
     /**
      * 
-     */
     @Override
     public void vacunar(){
         if (vacunar == true) {
@@ -62,6 +61,7 @@ public class Gato extends Mascota {
             bufar();
         }
     }
+    */
 
     /**
      * 

@@ -45,7 +45,7 @@ public class Perro extends Mascota {
      */
     @Override
     public void pasear(){
-        if (!estado) {
+        if (!estado()) {
             System.out.println(getNombre() + " no puede pasear hasta no se vacunado/a");
         } else {
             ladrar();
@@ -54,15 +54,14 @@ public class Perro extends Mascota {
 
     /**
      * 
-     */
-    @Override
-    public void vacunar(){
+     public void vacunar(){
         if (vacunar == true) {
             System.out.println((getNombre() + " ya ha sido vacunado/a"));
         } else {
             gruñir();
         }
     }
+    */
 
     /**
      * 
