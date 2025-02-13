@@ -1,0 +1,8 @@
+- Clase: Coche 
+- Instancia: miCoche, cocheVecino
+- Atributos: matricula, color..
+- Metodo: arrancha, frena..
+
+1º Archivo .java con el nombre de la clase
+    En este caso: Coche.java
+

@@ -1,88 +1,204 @@
-/*RELACION 4*/
+/*2. Añadir un nuevo centro. Añadir dos nuevos departamentos pertenecientes al centro anterior.*/
 
-/*1. Para cada extensión telefónica, hallar cuántos empleados la usan y el salario medio de
-estos.*/
+INSERT INTO tcentr (numce,nomce,señas)
+VALUES (100,'CENTRO NUEVO','C/NUEVA');
+INSERT INTO tdepto
+(numde,numce,direc,tidir,presu,depde,nomde)
+VALUES(1000,100,110,'F',3000,121,'NUEVO_DEP1'),
+(1001,100,110,'F',3000,121,'NUEVO_DEP2');
 
-/*2. Agrupando por departamento y número de hijos, hallar cuántos empleados hay en cada
-grupo.*/
+SELECT * FROM tcentr;
+SELECT * FROM tdepto;
 
-/*3. Hallar por departamentos la edad en años cumplidos del empleado más mayor, así
-como la edad media del mismo (el empleado debe tener comisión). Ordenar el
-resultado por edades.*/
+/*3.Añadir dos empleados a cada uno de los departamentos creados anteriormente. Estos empleados nuevos no tienen
+comisión y la fecha de ingreso es la fecha actual. Para realizar este ejercicio utilizar solo dos sentencias INSERT.*/
 
-/*4. Para los departamentos cuyo salario medio supera al de la empresa, hallar cuántas
-extensiones telefónicas tienen. Se debe mostrar el número de departamento (numde) y
-el número de extensiones telefónicas distintas que tiene cada uno de ellos.*/
+INSERT INTO temple
+(numem,numde,extel,fecna,fecin,salar,comis,numhi,nomem)
+VALUES
+(410,1000,500,'10/04/1997',GETDATE(),1500,NULL,1,'ZAMBRA
+NO,CARLOS'),
+(420,1000,500,'11/05/1998',GETDATE(),1500,NULL,2,'ZAMORA
+,CARLA');
 
-/*5. Hallar el máximo valor de la suma de los salarios de los departamentos. Queremos
-obtener el número de departamento (numde) y la suma de sus salarios, pero del
-departamento cuya suma de salarios es la mayor de todas.*/
+INSERT INTO temple
+(numem,numde,extel,fecna,fecin,salar,comis,numhi,nomem)
+VALUES(430,1001,600,'12/06/1999',GETDATE(),1800,NULL,1,'
+SOLER,JUAN'),
+(440,1001,600,'13/07/2000',GETDATE(),1800,NULL,0,'SOLERA
+,JUANA');
 
-/*6. Para cada departamento con presupuesto inferior a 10000 euros obtener el nombre, el
-nombre del centro donde está ubicado y el máximo salario de sus empleados, si éste
-excede de 1500 euros. Clasificar alfabéticamente por nombre de departamento. Hacer
-el ejercicio de dos maneras: con producto cartesiano y con JOIN.*/
+SELECT * FROM temple;
 
-/*7. Hallar por orden alfabético los nombres de los departamentos que dependen de los que
-tienen un presupuesto inferior a 10000 euros. Mostrar el nombre del departamento y el
-nombre del departamento del que dependen. Realizar la consulta de cuatro formas
-distintas: con predicado IN, con predicado ANY, con producto cartesiano y con JOIN.*/
+/*4. Bajar los salarios un 5% a todos los empleados con comisión. La instrucción debe estar dentro de una
+transacción y cuando compruebes que la operación se ha realizado correctamente, debes deshacerla.*/
 
-/*8. Obtener por orden alfabético los nombres de los departamentos cuyo presupuesto es
-inferior al 10 % de la suma de los salarios anuales de sus empleados (sin tener en
-cuenta la comisión y son 14 pagas). Hacer el ejercicio con predicado básico y con
-agrupamiento.*/
+BEGIN TRANSACTION;
 
-/*10. Para los centros de Madrid, obtener el nombre de cada centro junto con el nombre de
-los departamentos que tienen. Si un centro aún o tiene departamentos que pertenezcan
-al mismo, el nombre del centro debe salir igualmente y en el nombre del departamento
-debe aparecer “Sin departamento por el momento”./*
+UPDATE temple
+SET salar = salar - (salar * 0.05)
+WHERE comis IS NOT NULL;
 
-/*11. Para los departamentos con director obtener el nombre del centro en el que se
-encuentra y la dirección. Si un departamento aún no tiene asignado centro, el nombre
-del departamento debe salir igualmente y en el nombre del centro debe aparecer “Sin
-ubicar” y en la dirección “Desconocida.” */
+SELECT * FROM temple WHERE comis IS NOT NULL;
 
-/*12. Obtener para todos los departamentos su nombre, junto con el nombre y fecha de
-ingreso en la empresa en formato español de sus empleados. Si un departamento aún
-no tiene empleados, el nombre del departamento debe salir igualmente, en nombre de
-empleado debe aparecer “Sin empleados” y en fecha “Sin fecha”. Debes poner alias
-para todas las columnas.*/
+ROLLBACK TRANSACTION;/*BEGIN TRANSACTION Y ROLLBACK TRANSACTION
+- Inicia una transacción.
+- Una transacción es un conjunto de operaciones SQL que se ejecutan como una unidad única.
+- Si todo va bien, se puede confirmar (COMMIT).
+- Si algo sale mal o simplemente no queremos aplicar los cambios, podemos deshacerlo (ROLLBACK).*/
 
-/*13. Para los empleados que han ingresado en la empresa en el año actual, obtener su
-nombre y salario, así como el nombre y el presupuesto del departamento al que
-pertenece. Si al empleado aún no se le ha asignado departamento, el nombre del
-empleado y su salario deben salir igualmente y en nombre de departamento y en
-presupuesto debes poner el mensaje “Sin asignar”. Debes poner alias para todas las
-columnas.*/
+/* 5. Actualiza los presupuestos de todos los departamentos multiplicándolos por 10. La instrucción
+debe estar dentro de una transacción y cuando compruebes que la operación se ha realizado correctamente, debes
+deshacerla.*/
 
-/*14. Para los departamentos de “Nóminas”, “Organización”, “Personal” y “Compras y
-Logística”, obtener el número de departamento (identificador único), así como el
-nombre y extensión telefónica de los directores. Si alguno de estos departamentos no
-tiene aún asignado un director, el número del departamento debe salir igualmente y en
-nombre del director y extensión telefónica debes poner el mensaje. Debes poner alias
-para todas las columnas.*/
+BEGIN TRANSACTION;
 
-/*15.Para cada departamento obtener el nombre y el nombre del departamento del que
-depende, si existe algún departamento que no depende de ningún otro, el nombre del
-departamento debe salir igualmente y en la columna depde debe aparecer “No
-depende de ningún departamento.”*/
+UPDATE tdepto
+SET presu = presu * 10;
+SELECT * FROM tdepto;
 
-/*16.Obtener para los empleados con hijos y con comisión, su nombre, el nombre del
-departamento para el que trabajan y el nombre del centro en el que se encuentra su
-departamento. Si el empleado no tiene departamento, este debe salir igualmente, y si el
-departamento en el que está el empleado no tiene centro también debe salir.*/
+ROLLBACK TRANSACTION;
 
-/*17.Obtener los nombres de todos los centros junto con los nombres de los departamentos
-que tiene. Si un centro aún no tiene departamentos, este debe salir igualmente.
-Además, debes obtener el nombre de todos los departamentos aunque no tengan
-asignado centro. En los centros sin departamento debes poner en la columna nombre
-de departamento el mensaje "Sin departamento" y en los departamentos sin centros
-debes poner en la columna centro "Sin centro". Debes poner alias para todas las
-columnas. Ordena por el nombre del centro ascendentemente y a igual nombre del
-centro por nombre de departamento descendentemente.*/
+/*6. Borrar a uno de los empleados nuevos (solo conocemos su nombre). La instrucción debe estar dentro
+de una transacción y cuando compruebes que la operación se ha realizado correctamente, debes deshacerla.*/
 
-/*18.Obtener por cada centro, cuántos empleados hay que trabajen en departamentos que
-están ubicados en los mismos. Debe salir el nombre del centro y la frase "X
-empleados", donde X es el número de empleados que trabajan en departamentos
-ubicados en cada centro. Debes poner alias para todas las columnas.*/
+BEGIN TRANSACTION;
+
+DELETE FROM temple
+WHERE nomem LIKE 'ZAMORA,CARLA';
+SELECT * FROM temple;
+
+ROLLBACK TRANSACTION;/* 7. Borrar los empleados pertenecientes a los departamentos ubicados en el centro que añadiste en el 
+ejercicio 2 (solo conocemos el nombre del centro). La instrucción debe estar dentro de una transacción
+y cuando compruebes que la operación se ha realizado correctamente, debes deshacerla. 
+Realiza el ejercicio de diferentesmaneras.*/-- CON JOINBEGIN TRANSACTIONDELETE FROM temple
+FROM ( temple e JOIN tdepto d ON (e.numde=d.numde) )
+JOIN tcentr c ON (c.numce=d.numce)
+WHERE nomce LIKE 'CENTRO NUEVO';
+
+ROLLBACK TRANSACTION;-- CON INBEGIN TRANSACTIONDELETE FROM temple
+WHERE numde IN (SELECT d.numde
+FROM tdepto d JOIN tcentr c
+ON (d.numce=c.numce AND c.nomce LIKE
+'CENTRO NUEVO'));
+
+ROLLBACK TRANSACTION;
+
+/* 8. Disminuir en un 10% el presupuesto de los departamentos del nuevo centro (solo conocemos la
+dirección del centro). La instrucción debe estar dentro de una transacción y cuando compruebes que la operación
+se ha realizado correctamente, debes confirmarla. Realiza el ejercicio dos veces, primero usando
+un subselect, y después usando un JOIN.*/
+
+BEGIN TRANSACTION
+
+UPDATE tdepto
+SET presu = presu - presu * 0.1
+WHERE numce IN (SELECT numce
+FROM tcentr
+WHERE señas LIKE 'C/NUEVA');
+
+-- O bien,
+
+UPDATE tdepto
+SET presu = presu - presu * 0.1
+FROM tdepto d JOIN tcentr c ON (d.numce=c.numce)
+WHERE señas LIKE 'C/NUEVA';
+SELECT * FROM tdepto;
+
+COMMIT WORK; --Para confirmar la operacion
+
+
+/* 9. Asignar a todos los empleados de los departamentos cuyos nombres comienzan por la palabra
+SECTOR y que no tengan comisión, la comisión más alta del departamento de NOMINAS. La instrucción debe estar
+dentro de una transacción y cuando compruebes que la operación se ha realizado correctamente, debes
+deshacerla.*/
+
+BEGIN TRANSACTION;
+
+UPDATE temple
+SET comis = (SELECT MAX(comis)
+FROM temple
+WHERE numde=(SELECT numde
+FROM tdepto
+WHERE nomde LIKE 'NOMINAS')
+)
+WHERE numde = ANY (SELECT numde FROM tdepto WHERE nomde
+LIKE 'SECTOR%') AND comis IS NULL;
+7
+
+ROLLBACK TRANSACTION;/* 10. Asignar a los empleados con salarios comprendidos entre 1000 y 1500 euros el salario medio del
+departamento de PERSONAL. La instrucción debe estar dentro de una transacción y cuando compruebes que la
+operación se ha realizado correctamente, debes deshacerla. Utiliza un predicado BETWEEN. El salario
+asignado debe tener solo dos decimales.*/BEGIN TRANSACTION;
+
+UPDATE temple
+SET salar = (SELECT ROUND(AVG(SALAR),2,1)
+FROM temple e JOIN tdepto d ON
+(e.numde=d.numde)
+WHERE nomde LIKE 'PERSONAL'
+)
+WHERE SALAR BETWEEN 1000 AND 1500;
+
+ROLLBACK TRANSACTION;/*11.Borrar al empleado 260 ¿Por qué crees que te da error al intentarlo?*/DELETE FROM temple WHERE numem=260;
+
+/*Vemos que el empleado 260 pertenece al departamento 100*/
+
+SELECT * FROM temple ORDER BY numde;
+
+/*Vemos en la tabla de departamento que el jefe del departamento 100 es el empleado 260*/
+
+SELECT * FROM tdepto;
+
+/*Por tanto, si me dejara borrar al empleado 260, el departamento 100 tendría un empleado como director que
+no existe. El empleado 260 es FK en tdepto. El empleado 260 pertenece al departamento 100 y además es su director.*/
+
+/*12. Borrar al empleado 180. La instrucción debe estar dentro de una transacción y cuando compruebes que la
+operación se ha realizado correctamente, debes deshacerla. Antes de borrar al empleado 180 comprueba
+que no es jefe de ningún departamento, es decir, que el empleado 180 no está como FK en la tabla tdepto.*/
+
+BEGIN TRANSACTION;
+
+SELECT *
+FROM tdepto
+WHERE direc=180;
+DELETE FROM temple WHERE numem=180;
+SELECT * FROM temple WHERE numem=180;
+
+ROLLBACK TRANSACTION;/*13. Obtener una tabla con los nombres, extensiones telefónicas y salarios, únicamente de los empleados de
+temple dados de alta en la empresa en el año actual. Realiza de dos formas diferentes:
+a. Utilizando solo la sentencia SELECT INTO
+b. Utilizando La sentencia INSERT INTO SELECT. Crea
+primeramente la tabla de la forma más rápida posible.*/
+
+--Solución con SELECT INTO:
+SELECT nomem AS 'nombre',
+extel AS 'tfno',
+salar AS 'salario'
+INTO emp_nuevos
+FROM temple
+WHERE YEAR(fecin)=YEAR(GETDATE());--Solución con INSERT INTO SELECT:
+/*En primer lugar creo la tabla con la estructura que necesitamos*/
+
+SELECT nomem AS 'nombre',
+extel AS 'tfno',
+salar AS 'salario'
+INTO emp_nuevos1
+FROM temple
+WHERE 0=1;--Comprobamos la tabla y observamos que está vacía.
+SELECT * FROM emp_nuevos1;
+
+--Añadimos los datos:
+INSERT INTO emp_nuevos1
+SELECT nomem, extel, salar
+FROM temple
+WHERE YEAR(fecin)=YEAR(GETDATE());/*14. Borrar todas las filas de las tablas creadas en el ejercicio anterior. Realizar el ejercicio con la
+sentencia DELETE para la primera tabla y la sentencia TRUNCATE para la segunda ¿Cuál es la diferencia?*/
+
+DELETE FROM emp_nuevos;
+TRUNCATE TABLE emp_nuevos1;
+
+--Comprobamos que las tablas están ahora vacías:
+SELECT * FROM emp_nuevos;
+SELECT * FROM emp_nuevos1;
+
+/*La diferencia es que TRUNCATE quita todas las filas de una tabla sin registrar las eliminaciones individuales de filas.*/
