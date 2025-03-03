@@ -19,6 +19,14 @@ public class EJ01 {
         compañeros.add ("Gloria");
 
 
+         // Verificar si "Lucia" está en la lista
+        if (compañeros.contains("Lucia")) {
+            System.out.println("Lucia está en la lista.");
+        } else {
+            System.out.println("Lucia no está en la lista.");
+        }
+
+
         //mostramos elementos 
 
         for (String item : compañeros) {

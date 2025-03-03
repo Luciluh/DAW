@@ -15,7 +15,7 @@ public class cuatroEnRaya {
         int eleccionCol;
         Scanner sc = new Scanner(System.in);
 
-        // creo el tablero vacio
+        // creo el tablero vacío
         for (int i = 0; i < FILA; i++) {
             for (int j = 0; j < COL; j++) {
                 tablero[i][j] = vacio;
@@ -25,61 +25,62 @@ public class cuatroEnRaya {
         System.out.println("LAS CUATRO EN RAYA");
         System.out.println("===================");
 
-        while (true) {
-            realizarMovimientoMaquina(tablero,vacio,cruz);
-            //mostrar el tablero actualo
+        boolean juegoTerminado = false;  // Variable para controlar la terminación del juego
+
+        while (!juegoTerminado) {
+            // Turno de la máquina
+            realizarMovimientoMaquina(tablero, vacio, cruz);
             mostrarTablero(tablero);
 
             if (comprobarGanador(tablero, cruz)) {
                 System.out.println("¡Ha ganado el ORDENADOR!");
+                juegoTerminado = true; // Termina el juego si la máquina gana
+                break;
             }
 
-            // mi turno
+            // Turno del jugador
             System.out.println("Turno del jugador:");
             System.out.print("Introduce la fila (a-d): ");
             eleccionFila = sc.nextLine();
             System.out.print("Introduce la columna (0-3): ");
             eleccionCol = sc.nextInt();
-            sc.nextLine();  //limpio el escaner 
+            sc.nextLine();  // limpio el escaner 
 
-            // cambiar a numero
+            // cambiar a número
             int x = convertirFilaANumero(eleccionFila);
 
-            // posicion buena o no
+            // posición válida o no
             if (x != -1 && tablero[x][eleccionCol] == vacio) {
                 tablero[x][eleccionCol] = raya;
-                //muestro el estado del tablero
                 mostrarTablero(tablero);
-                
-                if (comprobarGanador(tablero, raya)) {
-                    System.out.println("¡Enhorabuena! !Me has ganado¡");
-                }
 
+                if (comprobarGanador(tablero, raya)) {
+                    System.out.println("¡Enhorabuena! ¡Me has ganado!");
+                    juegoTerminado = true; // Termina el juego si el jugador gana
+                    break;
+                }
             } else {
                 System.out.println("Posición inválida o ya ocupada, intenta nuevamente.");
             }
+
+            // Verificamos si el tablero está lleno (empate)
+            if (tableroLleno(tablero)) {
+                System.out.println("El tablero está lleno, ¡empate!");
+                juegoTerminado = true; // Termina el juego en empate
+                break;
+            }
         }
+
+        sc.close(); // cerramos el scanner al finalizar el juego
     }
 
-    /**
-     * Funcion para mostrar el tablero
-     * @param tablero
-     */
     public static void mostrarTablero(char[][] tablero) {
         for (int i = 0; i < FILA; i++) {
             switch (i) {
-                case 0: 
-                System.out.print("a |"); 
-                break;
-                case 1:
-                System.out.print("b |"); 
-                break;
-                case 2: 
-                System.out.print("c |"); 
-                break;
-                case 3: 
-                System.out.print("d |"); 
-                break;
+                case 0: System.out.print("a |"); break;
+                case 1: System.out.print("b |"); break;
+                case 2: System.out.print("c |"); break;
+                case 3: System.out.print("d |"); break;
             }
             for (int j = 0; j < COL; j++) {
                 System.out.printf("%3c", tablero[i][j]);
@@ -91,72 +92,41 @@ public class cuatroEnRaya {
         System.out.println();
     }
 
-
-    
-    /**
-     * Funcon para convertir la fila a numero
-     * @param fila
-     * @return
-     */
     public static int convertirFilaANumero(String fila) {
         int val;
         switch (fila) {
-            case "a": 
-            val=0;
-            break;
-            case "b": 
-            val=1;
-            break;
-            case "c": 
-            val=2;
-            break;
-            case "d": 
-            val=3;
-            break;
-            default:
-            val=-1;
-            break;
+            case "a": val=0; break;
+            case "b": val=1; break;
+            case "c": val=2; break;
+            case "d": val=3; break;
+            default: val=-1; break;
         }
         return val;
     }
 
-    /**
-     * Funcion para hacer el movimiento del pc
-     * @param tablero
-     */
     public static void realizarMovimientoMaquina(char[][] tablero, char vacio, char cruz) {
-
-        int x;
-        int y;
+        int x, y;
         Scanner sc = new Scanner(System.in);
 
-        // creo una pausa antes de mostrar directamente el movimiento de la maquina para que se juegue mejor, no tan rapido
-        System.out.println("Pulsa ENTER para ver el movimiento de la maquina");
+        // pausa antes de mostrar el movimiento de la máquina
+        System.out.println("Pulsa ENTER para ver el movimiento de la máquina");
         sc.nextLine();
 
         do {
             x = (int) (Math.random() * FILA);
             y = (int) (Math.random() * COL);
-        } while (tablero[x][y] != vacio); // se repiter si la posicion ya estya ocupada
+        } while (tablero[x][y] != vacio); // se repite si la posición ya está ocupada
         tablero[x][y] = cruz;
     }
 
-
-    /**
-     * Funcion para comprobar que un jugador ha ganao o no
-     * @param tablero
-     * @param jugador
-     * @return
-     */
     public static boolean comprobarGanador(char[][] tablero, char jugador) {
-
-        // filaa
+        // filas
         for (int i = 0; i < FILA; i++) {
             if (tablero[i][0] == jugador && tablero[i][1] == jugador && tablero[i][2] == jugador && tablero[i][3] == jugador) {
                 return true;
             }
         }
-        // olumna
+        // columnas
         for (int i = 0; i < COL; i++) {
             if (tablero[0][i] == jugador && tablero[1][i] == jugador && tablero[2][i] == jugador && tablero[3][i] == jugador) {
                 return true;
@@ -170,5 +140,17 @@ public class cuatroEnRaya {
             return true;
         }
         return false;
+    }
+
+    // Método para comprobar si el tablero está lleno
+    public static boolean tableroLleno(char[][] tablero) {
+        for (int i = 0; i < FILA; i++) {
+            for (int j = 0; j < COL; j++) {
+                if (tablero[i][j] == '·') {  // Si encuentra una celda vacía
+                    return false;  // El tablero no está lleno
+                }
+            }
+        }
+        return true;  // El tablero está lleno
     }
 }

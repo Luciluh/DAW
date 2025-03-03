@@ -1,0 +1,129 @@
+Para definir un HashSet: 
+
+HashSet<tipo de dato> nombre = new HashSet<tipo de dato>();
+Recuerda: el tipo de dato tiene que ser en mayuscula
+
+No tienen elementos duplicados ni se guardan siguiendo un orden especifico
+
+Para agregar/eliminar → add(), remove(), clear()
+Para consultar → contains(), size(), isEmpty()
+Para trabajar con otras colecciones → addAll(), retainAll(), removeAll()
+Para comparación y conversión → equals(), toArray()
+
+1. add(valor)
+
+import java.util.HashSet;
+
+public class Main {
+    public static void main(String[] args) {
+        HashSet<String> set = new HashSet<>();
+        System.out.println(set.add("A")); // true (se agrega)
+        System.out.println(set.add("B")); // true (se agrega)
+        System.out.println(set.add("A")); // false (ya existe)
+        System.out.println(set); // [A, B]
+    }
+}
+
+2. remove(valor)
+
+Elimina un elemento del conjunto.
+Devuelve true si lo eliminó, false si no estaba.
+
+set.remove("A"); // true
+set.remove("C"); // false (no existe)
+
+
+3. contains(valor)
+
+Devuelve true si el elemento está en el conjunto, false en caso contrario.
+System.out.println(set.contains("A")); // true
+System.out.println(set.contains("Z")); // false
+
+4. size()
+
+Retorna el número de elementos en el conjunto.
+System.out.println(set.size()); // 2
+
+5.isEmpty()
+
+System.out.println(set.isEmpty()); // false
+
+6. clear()
+
+Elimina todos los elementos del conjunto
+set.clear();
+System.out.println(set); // []
+
+7. toArray()
+Object[] array = set.toArray();
+
+8.addAll(colección)
+
+Agrega todos los elementos de otra colección.
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        HashSet<String> set1 = new HashSet<>();
+        set1.add("A");
+        set1.add("B");
+
+        HashSet<String> set2 = new HashSet<>();
+        set2.add("C");
+        set2.add("D");
+
+        set1.addAll(set2);  // Agrega los elementos de set2 a set1
+
+        System.out.println(set1); // [A, B, C, D]
+    }
+}
+
+
+9.retainAll(colección)
+
+Conserva solo los elementos que están en ambas colecciones (intersección).
+HashSet<String> intersección = new HashSet<>();
+intersección.add("A");
+
+set.retainAll(intersección);
+System.out.println(set); // [A]
+
+10.removeAll(colección)
+
+Elimina todos los elementos de la colección dada.
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        HashSet<String> set1 = new HashSet<>(Arrays.asList("A", "B", "C", "D"));
+        HashSet<String> set2 = new HashSet<>(Arrays.asList("B", "D"));
+
+        set1.removeAll(set2); // Elimina los elementos de set2 en set1
+
+        System.out.println(set1); // [A, C]
+    }
+}
+
+
+11.equals(colección)
+
+Retorna true si los conjuntos son iguales.
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        HashSet<Integer> set1 = new HashSet<>(Arrays.asList(1, 2, 3));
+        HashSet<Integer> set2 = new HashSet<>(Arrays.asList(3, 1, 2));
+
+        System.out.println(set1.equals(set2)); // true (porque contienen los mismos elementos)
+    }
+}
+
+toArray()	Convierte el HashSet en un array de Object.
+addAll(Collection c)	Agrega todos los elementos de otra colección al HashSet.
+retainAll(Collection c)	Mantiene solo los elementos comunes entre ambas colecciones.
+removeAll(Collection c)	Elimina los elementos que están en la otra colección.
+equals(Object o)	Compara dos HashSet para ver si son iguales (mismos elementos, sin importar el orden).
+
+
