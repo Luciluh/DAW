@@ -1,0 +1,114 @@
+Para definir un HashMap: 
+
+HashMap<Clave,Valor> nombre = new HashMap<Clave,Valor>();
+Clave: tipo de dato de la Clave
+Valor: tipo de datos para los Valores
+
+Recuerda: el tipo de dato tiene que ser en mayuscula
+
+No tienen elementos duplicados 
+
+Metodos del HashMap
+
+    1. get(clave)
+    Este método obtiene el valor asociado a una clave específica. Si la clave no existe, devuelve null.
+
+        import java.util.HashMap;
+
+    public class EjemploHashMap {
+        public static void main(String[] args) {
+            HashMap<String, Integer> edades = new HashMap<>();
+            edades.put("Juan", 25);
+            edades.put("María", 30);
+
+            System.out.println(edades.get("Juan")); // Salida: 25
+            System.out.println(edades.get("Pedro")); // Salida: null (porque "Pedro" no existe)
+        }
+    }
+
+    2. put(clave, valor)
+    Este método inserta un par clave-valor en el mapa. Si la clave ya existe, el valor anterior se sobrescribe.
+
+    HashMap<String, String> capitales = new HashMap<>();
+    capitales.put("España", "Madrid");
+    capitales.put("Francia", "París");
+    capitales.put("España", "Barcelona"); // Sobrescribe el valor anterior
+    
+    System.out.println(capitales.get("España")); // Salida: Barcelona
+    
+    3. keySet()
+    Devuelve un Set que contiene todas las claves del HashMap.
+
+        import java.util.HashMap;
+        import java.util.Set;
+
+        public class EjemploKeySet {
+            public static void main(String[] args) {
+                // Creamos un HashMap con datos de ejemplo
+                HashMap<String, Integer> edades = new HashMap<>();
+                edades.put("Juan", 25);
+                edades.put("María", 30);
+                edades.put("Pedro", 22);
+
+                // Obtenemos el conjunto de claves
+                Set<String> claves = edades.keySet();
+
+                // Imprimimos todas las claves
+                for (String clave : claves) {
+                    System.out.println(clave);
+                }
+            }
+        }
+
+    4. values()
+    Devuelve un Collection con todos los valores almacenados en el HashMap.
+    
+        HashMap<String, Integer> edades = new HashMap<>();
+    edades.put("Ana", 28);
+    edades.put("Carlos", 35);
+
+    for (int valor : edades.values()) {
+        System.out.println(valor);
+    }
+    // Salida: 28
+    //         35
+
+    5. entrySet()
+    Devuelve un Set con todos los pares clave-valor en forma de objetos Map.Entry.
+
+    HashMap<String, Integer> edades = new HashMap<>();
+    edades.put("Ana", 28);
+    edades.put("Carlos", 35);
+    
+    for (HashMap.Entry<String, Integer> pareja : edades.entrySet()) {
+        System.out.println("Clave: " + pareja.getKey() + ", Valor: " + pareja.getValue());
+    }
+    // Salida:
+    // Clave: Ana, Valor: 28
+    // Clave: Carlos, Valor: 35
+
+    6. containsKey(clave)
+    Verifica si una clave está presente en el HashMap. Devuelve true si la clave existe, y false en caso contrario.
+
+    HashMap<String, String> capitales = new HashMap<>();
+    capitales.put("España", "Madrid");
+    
+    System.out.println(capitales.containsKey("España")); // Salida: true
+    System.out.println(capitales.containsKey("Francia")); // Salida: false
+    
+    
+    7. getKey() y getValue() (usando Map.Entry)
+    Estos métodos se utilizan dentro de entrySet() para obtener claves y valores.
+
+    HashMap<String, Integer> productos = new HashMap<>();
+    productos.put("Manzana", 50);
+    productos.put("Naranja", 30);
+    
+    for (HashMap.Entry<String, Integer> entrada : productos.entrySet()) {
+        System.out.println("Producto: " + entrada.getKey() + ", Precio: " + entrada.getValue());
+    }
+    // Salida:
+    // Producto: Manzana, Precio: 50
+    // Producto: Naranja, Precio: 30
+    
+

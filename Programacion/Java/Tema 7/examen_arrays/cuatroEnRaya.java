@@ -40,7 +40,7 @@ public class cuatroEnRaya {
             eleccionFila = sc.nextLine();
             System.out.print("Introduce la columna (0-3): ");
             eleccionCol = sc.nextInt();
-            sc.nextLine();  //limpio el escaner por si acaso
+            sc.nextLine();  //limpio el escaner 
 
             // cambiar a numero
             int x = convertirFilaANumero(eleccionFila);
@@ -99,17 +99,25 @@ public class cuatroEnRaya {
      * @return
      */
     public static int convertirFilaANumero(String fila) {
+        int val;
         switch (fila) {
             case "a": 
-            return 0;
+            val=0;
+            break;
             case "b": 
-            return 1;
+            val=1;
+            break;
             case "c": 
-            return 2;
+            val=2;
+            break;
             case "d": 
-            return 3;
-            default: return -1; 
+            val=3;
+            break;
+            default:
+            val=-1;
+            break;
         }
+        return val;
     }
 
     /**

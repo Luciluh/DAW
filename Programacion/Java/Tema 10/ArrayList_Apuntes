@@ -1,0 +1,97 @@
+Para definir un Arraylist: 
+
+ArrayList<tipo de dato> nombre = new ArrayList<tipo de dato>();
+Recuerda: el tipo de dato tiene que ser en mayuscula
+
+Métodos mas comunes:
+    1. add(elemento)
+    Agrega un elemento al final de la lista.
+    ArrayList<String> lista = new ArrayList<>();
+    lista.add("Hola");
+    lista.add("Mundo");
+    System.out.println(lista); // [Hola, Mundo]
+
+    2. add(posicion, elemento)
+    Inserta un elemento en una posición específica. 
+    lista.add(1, "Java");
+    System.out.println(lista); // [Hola, Java, Mundo]
+
+    3. clear()
+    Elimina todos los elementos de la lista.
+    lista.clear();
+    System.out.println(lista); // []
+
+    4. contains(elemento)
+    Verifica si un elemento está en la lista.
+    lista.add("Hola");
+    boolean existe = lista.contains("Hola");
+    System.out.println(existe); // true
+
+    5. get(posicion)
+    Obtiene el elemento en una posición específica.
+    String palabra = lista.get(0);
+    System.out.println(palabra); // Hola
+    Si la posición no existe → IndexOutOfBoundsException
+
+    6. indexOf(elemento)
+    Devuelve la posición de la primera ocurrencia del elemento.
+    lista.add("Mundo");
+    int indice = lista.indexOf("Mundo");
+    System.out.println(indice); // 1
+
+    7. isEmpty()
+    Verifica si la lista está vacía.
+    boolean vacia = lista.isEmpty();
+    System.out.println(vacia); // false
+
+    8. remove(posicion)
+    Elimina un elemento en una posición dada.
+    lista.remove(1);
+    System.out.println(lista); // [Hola]
+
+    9. remove(elemento)
+    Elimina la primera aparición del elemento en la lista.
+    lista.add("Java");
+    lista.remove("Java");
+    System.out.println(lista); // [Hola]
+
+    10. removeIf(filtro)
+    Elimina elementos que cumplan una condición.
+    // Eliminar los números impares
+    numeros.removeIf(n -> n % 2 != 0); //expresion lambada
+
+    //ejemplo
+    ArrayList<String> colores = new ArrayList<>();
+    colores.add("Rojo");
+    colores.add("Verde");
+    colores.add("Azul");
+
+    colores.removeIf((palabra) -> palabra.contains("a"));
+    System.out.println(colores); // [Rojo, Verde]
+
+
+
+    11. set(posicion, elemento)
+    Reemplaza el elemento en la posición indicada.
+    lista.set(0, "Bienvenido");
+    System.out.println(lista); // [Bienvenido]
+
+
+    12. size()
+    Devuelve la cantidad de elementos en la lista.
+    int tamaño = lista.size();
+    System.out.println(tamaño); // 1
+
+    13. toArray()
+    Convierte la lista en un array.
+    Object[] array = lista.toArray();
+    System.out.println(Arrays.toString(array)); // [Bienvenido]
+
+_______________________________________________________________________________
+
+Ordenacion de ArrayList:
+Collections.sort(nombre arrayList);
+
+y ya desoyes al volver a recorrer el array estara ordenado
+
+
